@@ -5,8 +5,26 @@
   <router-outlet></router-outlet>
 </div>
 
-<nav class="navbar navbar-fixed-bottom navbar-light" style="background:yellow">
-  <a routerLink="/">Logo</a>
-  <a routerLink="/bid">Bid</a>
-  <a routerLink="/mensalidade">mensalidade</a>
+<nav class="navbar navbar-fixed-bottom navbar-light" style="background: rgb(255, 224, 47);">
+  <div class="container">       
+    <ul class="nav">     
+     
+      <li routerLinkActive="active" class="col-xs-4 text-center">
+          <a routerLink="/bid"><i class="fa fa-home fa-3x" arial-hidden="true"></i>
+            <div><strong>HOME</strong></div>
+          </a>
+      </li>
+      <li routerLinkActive="active" class="col-xs-4 text-center">
+          <a routerLink="/bid"><i class="fa fa-futbol-o fa-3x" arial-hidden="true"></i>
+            <div><strong>BID</strong></div>
+          </a>
+      </li>
+      <li routerLinkActive="active" class="col-xs-4 text-center"> 
+        <a routerLink="/mensalidade">
+          <i class="fa fa-money fa-3x"></i>
+          <div><strong>MENSALIDADE</strong></div>
+        </a>
+      </li>
+    </ul>
+  </div> 
 </nav>
