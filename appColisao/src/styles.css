@@ -1,16 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 a:link{
     list-style: none;
-    text-decoration: none;   
+    text-decoration: none;
+     
 }
-.active a{
-    background: grey;
+ul.nav li a {
+    color:black;  
 }
 ul.nav li a:hover
 {
-background: grey;
+    background: rgba(3, 3, 0, 0.4);
+    color:rgba(7, 0, 0, 0.43);
 }
 ul.nav li a:focus
 {
-background: grey;
+    background: rgba(3, 3, 0, 0.4);
+    color:rgba(7, 0, 0, 0.43);
+}
+.active  a:link{
+   color: rgba(7, 0, 0, 0.43); 
+   background: rgba(3, 3, 0, 0.4);  
 }

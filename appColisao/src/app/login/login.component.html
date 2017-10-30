@@ -1,3 +1,14 @@
-<p>
-  login works!!
-</p>
+<h4>Login</h4>
+<div class="row">
+  <div class="input-field col-xs-6">
+    <label for="email" class="active">Email</label>
+    <input [(ngModel)]="usuario.email" type="email" class="validate" id="email">
+  </div>
+</div>
+<div class="row">
+    <div class="input-field col-xs-6">
+      <label for="senha" class="active">Senha</label>
+      <input [(ngModel)]="usuario.senha" type="password" class="validate" id="senha">
+    </div>
+</div>
+<button (click)="fazerLogin()">Login</button>
