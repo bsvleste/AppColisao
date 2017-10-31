@@ -15,8 +15,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  fazerLogin()
+  fazerLogin(form)
   {
+    //console.log(form);
+    console.log(this.usuario);
     this.authService.fazerLogin(this.usuario);    
   }
 

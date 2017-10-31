@@ -1,0 +1,21 @@
+
+.form-control
+{
+    border-top: 0 white;
+    border-left: 0 white;
+    border-right: 0 white;
+    border-bottom: 0.5px solid #575757;
+    border-radius: 0;
+    box-shadow: none;
+}
+.has-error>input{
+    border-top: 0 white;
+    border-left: 0 white;
+    border-right: 0 white;
+    border-bottom: 0.5px solid red;
+    border-radius: 0;
+    box-shadow: 0.5px solid red;
+}
+.has-error label{
+    color:red;
+}
