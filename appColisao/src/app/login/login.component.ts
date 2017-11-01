@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   fazerLogin(form)
   {
     //console.log(form);
+    this.usuario = form.value;
     console.log(this.usuario);
     this.authService.fazerLogin(this.usuario);    
   }

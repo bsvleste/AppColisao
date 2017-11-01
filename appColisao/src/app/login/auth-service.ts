@@ -7,13 +7,14 @@ export class AuthService {
 
   private usuarioAutenticado:boolean = false;
   mostraMenuEmmiter = new EventEmitter<boolean>();
+  permissaoMenu = new EventEmitter<boolean>();
   private user:any = [
-    {email:'bvaleiro@gmail.com',senha:'aeioub'},
-    {email:'mvaleiro@gmail.com',senha:'laralara'}
+    {email:'bvaleiro@gmail.com',senha:'aeioub',permissao:'adm'},
+    {email:'mvaleiro@gmail.com',senha:'laralara',permissao:'jogador'}
   
   ];
   
-  private teste:Usuario;
+  private adm:any;
   private flag:boolean = false;
   constructor(private router:Router) { }
 
@@ -28,10 +29,20 @@ export class AuthService {
       if(user.email == usuario.email && user.senha == usuario.senha)
       {
         this.flag = true;
+        this.adm = user;
+        //console.log('teste'  + this.teste.permissao);
+        
     }
   }
   if(this.flag)
   {
+    if(this.adm.permissao === 'adm')
+    {
+      this.permissaoMenu.emit(true);
+    }else
+    {
+      this.permissaoMenu.emit(false);
+    }
     this.usuarioAutenticado = true;
     this.mostraMenuEmmiter.emit(true);
     this.router.navigate(['/']);
@@ -41,9 +52,9 @@ export class AuthService {
     this.mostraMenuEmmiter.emit(false);      
       console.log("usuairo ou senha invalidos");
   }
-   
-          
-}
+ 
+} 
+
   usuarioLogado()
   {
     return this.usuarioAutenticado;
