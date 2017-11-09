@@ -1,21 +1,39 @@
 
 .form-control
 {
-    border-top: 0 white;
-    border-left: 0 white;
-    border-right: 0 white;
+    border-top: 0 black;
+    border-left: 0 black;
+    border-right: 0 black;
     border-bottom: 0.5px solid #575757;
     border-radius: 0;
     box-shadow: none;
+    background-color: black;
+    color: yellow;
+}
+.form-control:focus
+{
+    border-top: 0.5px #566471;
+    border-left: 0.5px #566471;
+    border-right: 0.5px #566471;
+    border-bottom: 0.5px solid #575757;
+    border-radius: 0.5px #566471;
+    box-shadow: none;
+    background-color: black;
+
 }
 .has-error>input{
-    border-top: 0 white;
-    border-left: 0 white;
-    border-right: 0 white;
+    border-top: 0 black;
+    border-left: 0 black;
+    border-right: 0 black;
     border-bottom: 0.5px solid red;
     border-radius: 0;
     box-shadow: 0.5px solid red;
+    color:red;
 }
 .has-error label{
     color:red;
+}
+.label{
+    color:#566471;
+    font-size: 1.3em;
 }

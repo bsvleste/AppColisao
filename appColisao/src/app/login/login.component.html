@@ -1,17 +1,12 @@
 <form #f="ngForm" (ngSubmit)="fazerLogin(f)">
-  <div *ngIf="!email.valid && email.touched" class="alert alert-danger" >
-    Digite um email valido
-  </div>
+  <app-error [mostraError]="verificaCampoInvalido(email)" msgError="Digite um email valido"></app-error>
   <div class="form-group " [class.has-error]="!email.valid && email.touched">
-    <label for="exampleInputEmail1">Email address</label>
-    <input #email="ngModel" type="email" class="form-control input-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" ngModel required email>
+    <input #email="ngModel" type="email" class="form-control input-lg" id="login" aria-describedby="emailHelp" placeholder="Email" name="email" ngModel required email>
+    <app-error [mostraError]="verificaSenha(f)" msgError="Senha um email valido"></app-error>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input #senha="ngModel" ngModel type="password" class="form-control input-lg" id="password" placeholder="Password" name="senha" required>
-    <small id="password" class="form-text text-muted">Nunca forneça sua senha para estranhos.</small>
+    <input #senha="ngModel" ngModel type="password" class="form-control input-lg" id="senha" placeholder=Senha name="senha" required>
+    <small id="senha" class="form-text text-muted" style="color:#f0c330;">Nunca forneça sua senha para estranhos.</small>
   </div>
-
   <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!f.valid">Submit</button>
   </form>
-  
