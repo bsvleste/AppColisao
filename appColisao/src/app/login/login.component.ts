@@ -11,21 +11,27 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   minLength:Number = 5;
   private usuario: Usuario = new Usuario();
+  private flag:boolean  = false;
+  dados:boolean= true;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
   fazerLogin(form)
   {
-    console.log(form);
-    if(form.value.senha.length < 5){
-      console.log("funfou");
-    }else{
-
+  this.authService.emailEsenha.subscribe(
+      validaUsuarios => this.dados = validaUsuarios
+    );
       this.usuario = form.value;
       console.log(this.usuario);
-      this.authService.fazerLogin(this.usuario);
-  }
+      if(this.usuario.senha.length < 5 ){
+
+       this.flag= true;
+      }else{
+        this.authService.fazerLogin(this.usuario);
+        this.flag = false;
+      }
+  
 }
   // verrifica se o campo é valido e se tem o foco
   verificaCampoInvalido(campo)
@@ -38,11 +44,8 @@ export class LoginComponent implements OnInit {
   {
     return {'has-error': this.verificaCampoInvalido(campo)}
   }
-  verificaSenha(form)
+  verificaSenha()
   {
-    if(form.value.senha.length < 5 )
-    {
-      console.log("meno que 5");
-    }
-  }
+    return this.flag;
+  } 
 }

@@ -8,6 +8,8 @@ export class AuthService {
   private usuarioAutenticado:boolean = false;
   mostraMenuEmmiter = new EventEmitter<boolean>();
   permissaoMenu = new EventEmitter<boolean>();
+  emailEsenha = new EventEmitter<boolean>();
+
   private user:any = [
     {email:'bvaleiro@gmail.com',senha:'aeioub',permissao:'adm'},
     {email:'mvaleiro@gmail.com',senha:'laralara',permissao:'jogador'}
@@ -45,9 +47,11 @@ export class AuthService {
     }
     this.usuarioAutenticado = true;
     this.mostraMenuEmmiter.emit(true);
+    this.emailEsenha.emit(true);
     this.router.navigate(['/']);
   }else
   {
+    this.emailEsenha.emit(false);
     this.usuarioAutenticado = false;
     this.mostraMenuEmmiter.emit(false);      
       console.log("usuairo ou senha invalidos");
