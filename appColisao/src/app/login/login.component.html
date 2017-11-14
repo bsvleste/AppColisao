@@ -1,18 +1,14 @@
 <form #f="ngForm" (ngSubmit)="fazerLogin(f)">
   <app-error [mostraError]="verificaCampoInvalido(email)" msgError="Digite um email valido"></app-error>
+  <app-error [mostraError]="verificaSenha()" msgError="A senha tem que ter mais que 5 digitos"></app-error>
+  <app-error [mostraError]="!dados" msgError="Email ou Senha invalidos"></app-error>
   
   <div class="form-group " [class.has-error]="!email.valid && email.touched">
     <input #email="ngModel" type="email" class="form-control input-lg" id="login" aria-describedby="emailHelp" placeholder="Email" name="email" ngModel required email>
-    <app-error [mostraError]="verificaSenha()" msgError="A senha tem que ter mais que 5 digitos"></app-error>
   </div>
   <div class="form-group">
     <input #senha="ngModel" ngModel type="password" class="form-control input-lg" id="senha" placeholder=Senha name="senha" required>
     <small id="senha" class="form-text text-muted" style="color:#f0c330;">Nunca forneça sua senha para estranhos.</small>
   </div>
-  <div *ngIf="!dados">
-  <div class="alert alert-danger">
-  <p>Senha ou Email invlaido</p>
-  </div>
-  </div>
-  <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!f.valid">Submit</button>
+  <button type="submit" class="btn btn-lg btn-block" [disabled]="!f.valid " style="background-color:#f0c330;">Submit</button>
   </form>

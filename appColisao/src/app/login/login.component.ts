@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   dados:boolean= true;
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
   }
   fazerLogin(form)
   {
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
        this.flag= true;
       }else{
         this.authService.fazerLogin(this.usuario);
+        console.log(this.authService.usuarioLogado());
         this.flag = false;
       }
   
