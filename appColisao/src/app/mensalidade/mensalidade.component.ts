@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mensalidade.component.css']
 })
 export class MensalidadeComponent implements OnInit {
-
+  mensalidade:string = "Mensalidade";
   constructor() { }
 
   ngOnInit() {

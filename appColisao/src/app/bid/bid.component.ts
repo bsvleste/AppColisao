@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bid.component.css']
 })
 export class BidComponent implements OnInit {
-
+  bid:string = "Bem Vindo ao BID";
   constructor() { }
 
   ngOnInit() {

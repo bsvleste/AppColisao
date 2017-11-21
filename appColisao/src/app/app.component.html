@@ -1,27 +1,29 @@
-<nav class="navbar navbar-default navbar-light text-center" style="background:#f7ca18;">
-  <img src="assets/img/logoColisao.png" alt="" class="img-circle" width="80px">
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
 
-<nav *ngIf="mostraMenu" class="navbar navbar-fixed-bottom navbar-light" style="background: #f7ca18;">
+  <nav class="navbar navbar-default navbar-light text-center" style="background:#f7ca18;">
+    <img src="assets/img/logoColisao.png" alt="" class="img-circle" width="80px">
+  </nav>
+  <div class="container-fluid" >
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!--<nav *ngIf="mostraMenu" class="navbar navbar-fixed-bottom navbar-light" style="background: #f7ca18;">-->
+  <nav  class="navbar navbar-fixed-bottom navbar-light" style="background: #f7ca18;">
     <ul class="nav">     
       <li routerLinkActive="active" class="col-xs-4 text-center" >
-          <a routerLink="/home"><i class="fa fa-home fa-3x" arial-hidden="true"></i>
+        <a routerLink="/home"><i class="fa fa-home fa-3x" arial-hidden="true"></i>
             <div><strong>HOME</strong></div>
           </a>
-      </li>
-      <li routerLinkActive="active" class="col-xs-4 text-center">
+        </li>
+        <li routerLinkActive="active" class="col-xs-4 text-center">
           <a routerLink="/bid"><i class="fa fa-futbol-o fa-3x" arial-hidden="true"></i>
             <div><strong>BID</strong></div>
           </a>
-      </li>
-      <li *ngIf="admPermissao" routerLinkActive="active" class="col-xs-4 text-center"> 
-        <a routerLink="/mensalidade">
-          <i class="fa fa-money fa-3x"></i>
-          <div><strong>MENSALIDADE</strong></div>
-        </a>
-      </li>
-    </ul>
-</nav>
+        </li>
+        <li *ngIf="admPermissao" routerLinkActive="active" class="col-xs-4 text-center"> 
+          <a routerLink="/mensalidade">
+            <i class="fa fa-money fa-3x"></i>
+            <div><strong>MENSALIDADE</strong></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
