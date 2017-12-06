@@ -1,0 +1,18 @@
+
+.nav ul li{
+    display: inline;
+}
+.nav li a:hover
+{
+    background:#f6bb42;
+    color:black;
+}
+.nav li a:focus
+{
+    background:black;
+    color:#f6bb42;
+}
+.active  a:link{
+    background:black;
+    color:#f6bb42;
+}

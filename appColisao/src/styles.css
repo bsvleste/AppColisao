@@ -7,22 +7,4 @@ body{
 a:link{
     list-style: none;
     text-decoration: none;
-
-}
-ul.nav li a {
-    color:black;
-}
-ul.nav li a:hover
-{
-    background: rgba(3, 3, 0, 0.4);
-    color:rgba(7, 0, 0, 0.43);
-}
-ul.nav li a:focus
-{
-    background: rgba(3, 3, 0, 0.4);
-    color:rgba(7, 0, 0, 0.43);
-}
-.active  a:link{
-   color: rgba(7, 0, 0, 0.43);
-   background: rgba(3, 3, 0, 0.4);
 }
