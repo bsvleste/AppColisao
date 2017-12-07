@@ -2,10 +2,10 @@
 .nav ul li{
     display: inline;
 }
-.nav li a:hover
+/*.nav li a:hover
 {
-    background:#f6bb42;
-    color:black;
+    background:black;
+    color:#f6bb42;
 }
 .nav li a:focus
 {
@@ -15,4 +15,27 @@
 .active  a:link{
     background:black;
     color:#f6bb42;
+}*/
+.nav li a:hover
+{
+    background: rgba(133, 0, 153, 0);
+    border-top: 5px #870099 solid;
+    color:#870099;
+}
+.nav li a:focus
+{
+    background: rgba(133, 0, 153, 0);
+    border-top: 5px #870099 solid;
+    color:#870099;
+}
+.active  a:link{
+    background: rgba(133, 0, 153, 0);
+    border-top: 5px #870099 solid;
+    color:#870099;
+}
+.nav a {
+    color:black;
+}
+.active a {
+    color: #870099;
 }

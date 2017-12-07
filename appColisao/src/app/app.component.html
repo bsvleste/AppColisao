@@ -5,25 +5,27 @@
   </div>
   
   <!--<nav *ngIf="mostraMenu" class="navbar navbar-fixed-bottom navbar-light" style="background: #f7ca18;">-->
-  <nav  class="navbar navbar-fixed-bottom" style="background: #ffce54;">
-    <ul class="nav">     
-      <li routerLinkActive="active" class="col-sm-4 text-center" >
-        <a routerLink="/home"><i class="fa fa-home fa-3x" arial-hidden="true"></i>
-            <div><strong>HOME</strong></div>
+  <nav>
+
+    <ul class="nav navbar-fixed-bottom " style="background: #ffce54;">     
+      <li routerLinkActive="active" class="text-center" >
+        <a routerLink="/home" class="col-xs-4"><i class="fa fa-home fa-2x" arial-hidden="true"></i>
+          <div><strong>HOME</strong></div>
+        </a>
+      </li>
+      <li routerLinkActive="active" class="text-center">
+        <a routerLink="/bid" class="col-xs-4"><i class="fa fa-futbol-o fa-2x" arial-hidden="true"></i>
+          <div><strong>BID</strong></div>
           </a>
         </li>
-        <li routerLinkActive="active" class="col-sm-4 text-center">
-          <a routerLink="/bid"><i class="fa fa-futbol-o fa-3x" arial-hidden="true"></i>
-            <div><strong>BID</strong></div>
-          </a>
-        </li>
-        <li *ngIf="admPermissao" routerLinkActive="active" class=" text-center"> 
-          <a routerLink="/mensalidade">
-            <i class="fa fa-money fa-3x"></i>
+        <li *ngIf="admPermissao" routerLinkActive="active" class="text-center"> 
+          <a routerLink="/mensalidade" class="col-xs-4">
+            <i class="fa fa-money fa-2x"></i>
             <div><strong>MENSALIDADE</strong></div>
           </a>
         </li>
       </ul>
-    </nav>
-
+</nav>
+   
   
+    
