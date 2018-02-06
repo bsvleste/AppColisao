@@ -1,8 +1,8 @@
-
+/*
 .nav ul li{
     display: inline;
 }
-/*.nav li a:hover
+.nav li a:hover
 {
     background:black;
     color:#f6bb42;
@@ -15,7 +15,7 @@
 .active  a:link{
     background:black;
     color:#f6bb42;
-}*/
+}
 .nav li a:hover
 {
     background: rgba(133, 0, 153, 0);
@@ -38,4 +38,36 @@
 }
 .active a {
     color: #870099;
+}*/
+
+div.scrollMenu
+{
+  background-color: #FBF201;
+  overflow: auto;
+  white-space: nowrap;
+}
+div.scrollMenu a
+    {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  width: 120px;
+  height: 70px;
+  text-decoration: none;
+}
+div.scrollMenu a:hover
+{
+  background-color: #777;
+}
+.img{
+    width: 12.5%;
+}
+@media screen and (max-width: 720px)
+{
+    div.scrollMenu a
+    {
+        width: 120px;
+        height: 70px;
+    }
 }

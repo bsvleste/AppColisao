@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('http://fonts.googleapis.com/css?family=Sintony');
 body{
-  background-color: black;
+  background: #434a54;
   font-family: 'Sintony', sans-serif;
 }
 a:link{

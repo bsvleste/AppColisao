@@ -1,0 +1,66 @@
+.meses{
+    margin-top: -20px;
+    height: 50px;
+    background-color: cadetblue;
+}
+.meses h5
+{
+    padding: 14px;
+}
+.menu
+{
+    margin-top: -21px;
+    position: absolute;
+    z-index: 5;
+    height: 100%; 
+    width: 40%;
+    background: #656d78;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.2s;
+    animation-name: animatetop;
+    animation-duration: 0.2s
+}
+.menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+}
+.menu li a 
+{
+  display: block;
+  text-decoration: none;
+  padding: 8px 16px;
+  color:#ffce54;
+}
+.menu li a:hover
+{
+  background: #434a54;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {left:-300px; opacity:0} 
+    to {left:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {left:-300px; opacity:0}
+    to {left:0; opacity:1}
+}
+.closeMenu
+{
+  height: 40px;
+  background: #f6bb42;
+}
+/*span de dentro do menu*/
+.closeMenu>span
+{
+  float: right;
+  cursor: pointer;
+}
+@media screen and (max-width: 720px)
+{
+  .menu
+  {
+    width: 70%;
+  }
+}

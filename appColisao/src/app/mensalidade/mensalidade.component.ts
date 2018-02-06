@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mensalidade',
@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mensalidade.component.css']
 })
 export class MensalidadeComponent implements OnInit {
-  mensalidade:string = "Mensalidade";
+  @ViewChild('mySidebar') myDiv: ElementRef;
+
+  mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.closeMenu();
   }
-
+  closeMenu()
+  {
+    this.myDiv.nativeElement.style.display = "none";
+  }
+  openMenu()
+  { 
+    console.log("Clicou");
+    this.myDiv.nativeElement.style.display = "block";
+  }
 }
