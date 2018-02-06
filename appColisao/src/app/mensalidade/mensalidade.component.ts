@@ -7,13 +7,13 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class MensalidadeComponent implements OnInit {
   @ViewChild('mySidebar') myDiv: ElementRef;
-
+  flag:boolean = false;
   mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
   constructor() { }
 
   ngOnInit() 
   {
-    this.closeMenu();
+    this.menuAutomatico();
   }
   closeMenu()
   {
@@ -23,5 +23,16 @@ export class MensalidadeComponent implements OnInit {
   { 
     console.log("Clicou");
     this.myDiv.nativeElement.style.display = "block";
+  }
+  menuAutomatico()
+  {
+    if(!this.flag)
+    {
+      this.closeMenu();
+      this.flag = true;
+    }else{
+      this.openMenu();
+      this.flag = false;
+    }
   }
 }

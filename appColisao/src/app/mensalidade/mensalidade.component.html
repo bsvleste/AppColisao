@@ -1,9 +1,9 @@
 <nav class="menu" #mySidebar style="display:block;">
         <div class="closeMenu">
-            <span  class=""><i class="fa fa-window-close fa-3x" aria-hidden="true" (click)="closeMenu()"></i></span>
+            <span  class=""><i class="fa fa-window-close fa-3x" aria-hidden="true" (click)="menuAutomatico()"></i></span>
         </div>
         <ul class="">
-            <li><a class="" href="" (click)="openMenu()">Janeiro</a></li>
+            <li><a class="" href="" (click)="menuAutomatico()">Janeiro</a></li>
             <li><a class="" href="#/mensalidade">Janeiro</a></li>
             <li><a class="" href="#/mensalidade">Janeiro</a></li>
             <li><a class="" href="#/mensalidade">Janeiro</a></li>
@@ -18,6 +18,7 @@
 </nav>  
 
 <div class="col-sm-12 meses">    
-    <h5 class="text-right" (click)="openMenu()">Meses<span class="glyphicon glyphicon-th-list"></span></h5>
+    <span class="icon glyphicon glyphicon-calendar" (click)="menuAutomatico()"></span>
 </div>    
 <h3 class="text-center">{{ mensalidade }}</h3>
+<app-meses></app-meses>
