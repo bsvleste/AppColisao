@@ -12,23 +12,21 @@ import { BidComponent } from './bid/bid.component';
 import { HomeComponent } from './home/home.component';
 import { ComponentErrorComponent } from './component-error/component-error.component';
 import { MesesComponent } from './mensalidade/meses/meses.component';
+import { MensalidadeGuard } from './guard/mensalidade.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MensalidadeComponent,
-    BidComponent,
     HomeComponent,
-    ComponentErrorComponent,
-    MesesComponent
+    ComponentErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [AuthGuard,AuthService,MesesServices],
+  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

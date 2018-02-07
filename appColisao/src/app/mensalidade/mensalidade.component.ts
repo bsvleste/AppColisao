@@ -11,12 +11,12 @@ export class MensalidadeComponent implements OnInit {
   flag:boolean = false;
   mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
   private meses:any[];
-  constructor(private mesesServies:MesesServices) { }
+  constructor(private mesesServices:MesesServices) { }
 
   ngOnInit() 
   {
     this.menuAutomatico();
-    this.meses = this.mesesServies.getMeses();
+    this.meses = this.mesesServices.getMeses();
   }
   closeMenu()
   {

@@ -3,7 +3,7 @@
       <app-error [mostraError]="verificaCampoInvalido(email)" msgError="Digite um email valido"></app-error>
       <app-error [mostraError]="verificaSenha()" msgError="A senha tem que ter mais que 5 digitos"></app-error>
     <app-error [mostraError]="!dados" msgError="Email ou Senha invalidos"></app-error>
-    
+      
     <div class="form-group " [class.has-error]="!email.valid && email.touched">
       <input #email="ngModel" type="email" class="form-control input-lg" id="login" aria-describedby="emailHelp" placeholder="Email" name="email" ngModel required email>
     </div>
