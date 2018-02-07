@@ -3,17 +3,7 @@
             <span  class=""><i class="fa fa-window-close fa-3x" aria-hidden="true" (click)="menuAutomatico()"></i></span>
         </div>
         <ul class="">
-            <li><a class="" href="" (click)="menuAutomatico()">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
-            <li><a class="" href="#/mensalidade">Janeiro</a></li>
+            <li><a class="" href="" (click)="menuAutomatico()" *ngFor="let mes of meses">{{mes.descricao }}</a></li>
         </ul>
 </nav>  
 

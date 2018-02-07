@@ -1,3 +1,4 @@
+import { MesesServices } from './../services/meses.services';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meses.component.css']
 })
 export class MesesComponent implements OnInit {
-
-  constructor() { }
+  private meses:any[];
+  constructor(private mesesServices:MesesServices) { }
 
   ngOnInit() {
+    this.meses = this.mesesServices.getMeses();
   }
 
 }

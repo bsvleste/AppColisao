@@ -8,6 +8,7 @@ import { BidComponent } from './bid/bid.component';
 import { AuthGuard } from './guard/auth-guard';
 /*
 usar essa rota quando tiver senha
+*/
 const routes: Routes = [
   {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'mensalidade',component:MensalidadeComponent,canActivate:[AuthGuard]}, 
   {path:'login',component:LoginComponent},
 ];
-*/
+
+/*
 const routes: Routes = [
   {path:"", pathMatch:"full",component:HomeComponent},
   {path:"home",component:HomeComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path:'mensalidade',component:MensalidadeComponent}, 
   {path:'login',component:LoginComponent},
 ];
+*/
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

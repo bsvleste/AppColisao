@@ -1,3 +1,4 @@
+import { MesesServices } from './services/meses.services';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
@@ -9,11 +10,13 @@ export class MensalidadeComponent implements OnInit {
   @ViewChild('mySidebar') myDiv: ElementRef;
   flag:boolean = false;
   mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
-  constructor() { }
+  private meses:any[];
+  constructor(private mesesServies:MesesServices) { }
 
   ngOnInit() 
   {
     this.menuAutomatico();
+    this.meses = this.mesesServies.getMeses();
   }
   closeMenu()
   {

@@ -1,3 +1,4 @@
+import { MesesServices } from './mensalidade/services/meses.services';
 import { AuthService } from './login/auth-service';
 import { AuthGuard } from './guard/auth-guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +11,7 @@ import { MensalidadeComponent } from './mensalidade/mensalidade.component';
 import { BidComponent } from './bid/bid.component';
 import { HomeComponent } from './home/home.component';
 import { ComponentErrorComponent } from './component-error/component-error.component';
-import { MesesComponent } from './meses/meses.component';
+import { MesesComponent } from './mensalidade/meses/meses.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { MesesComponent } from './meses/meses.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [AuthGuard,AuthService,MesesServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
