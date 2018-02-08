@@ -24,7 +24,6 @@ export class MensalidadeComponent implements OnInit {
   }
   openMenu()
   { 
-    console.log("Clicou");
     this.myDiv.nativeElement.style.display = "block";
   }
   menuAutomatico()

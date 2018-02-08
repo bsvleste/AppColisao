@@ -1,11 +1,11 @@
 <div class="bid">
   <div class="row">  
     <!--ngRepeat commeca aqui -->
-    <div class="col-sm-6" >
+    <div class="col-sm-6" *ngFor="let jogador of teste.records" >
       <div class="cont">    
         <div class="mensalidade">
           <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->    
-          <label for="valor" ><h5>{{ mes.descricao }}</h5></label>
+          <label for="valor" class='{{jogador.Status == "PENDENTE" ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
           <input class="" type="text" name="" id="valor" placeholder="Valor">
           <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar"><i class="fa fa-pencil" aria-hidden="true"></i></a>
           <a href='#'  class="js-status link" data-toggle="tooltip" data-placement="bottom"
