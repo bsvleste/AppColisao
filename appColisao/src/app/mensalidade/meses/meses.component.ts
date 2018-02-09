@@ -1,3 +1,4 @@
+import { Jogadores } from './../jogadores';
 import { HttpClient } from '@angular/common/http';
 import { Http, RequestOptions } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,7 @@ export class MesesComponent implements OnInit, AfterViewInit {
   inscricao:Subscription;
   mes:Meses;
   id_mes:number;
-  teste:any[];
+  jogadores:string[];
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
@@ -28,24 +29,26 @@ export class MesesComponent implements OnInit, AfterViewInit {
     this.inscricao = this.route.params.subscribe(
       (params:any)=>{
         let id = params['id'];
-        //this.mes = this.mesesServices.getMes(id);
+        this.mes = this.mesesServices.getMes(id);
         this.http.get('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id).subscribe(
           (data:any[])=>{
-            this.teste = data;
-            console.log(this.teste);
+            if(data)
+            {
+              this.jogadores = data;
+            }else{
+              this.jogadores = [];
+            }
+            console.log(this.jogadores);
           }
-        )
-        if(this.teste == null)
-        {
-          console.log('abra');
-        }
+        )        
       }
     );
     
-    //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes});
+    //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes},(jog)=>{this.jogadores = jog.data});
     console.log(this.inscricao);
   }
   ngAfterViewInit() {
     console.log('ngAfterViewinit');
+    
    }
 }
