@@ -18,7 +18,7 @@ export class MesesComponent implements OnInit, AfterViewInit {
   inscricao:Subscription;
   mes:Meses;
   id_mes:number;
-  jogadores:string[];
+  jogadores:Jogadores;
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
@@ -30,7 +30,8 @@ export class MesesComponent implements OnInit, AfterViewInit {
       (params:any)=>{
         let id = params['id'];
         this.mes = this.mesesServices.getMes(id);
-        this.http.get('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id).subscribe(
+        this.mesesServices.getJogadores(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});
+        /*this.http.get('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id).subscribe(
           (data:any[])=>{
             if(data)
             {
@@ -40,7 +41,7 @@ export class MesesComponent implements OnInit, AfterViewInit {
             }
             console.log(this.jogadores);
           }
-        )        
+        ) */      
       }
     );
     

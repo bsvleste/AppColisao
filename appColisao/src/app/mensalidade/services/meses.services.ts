@@ -1,7 +1,7 @@
+import { Jogadores } from './../jogadores';
 import { HttpClient } from '@angular/common/http';
 import { Meses } from './../meses';
 import { Injectable } from "@angular/core";
-import { Jogadores } from '../jogadores';
 
 @Injectable()
 export class MesesServices
@@ -44,10 +44,6 @@ export class MesesServices
     
     getJogadores(id:number)
     {
-        return this.httpClient.get('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id)
-        .subscribe((data:any[])=>{
-            this.jogadores = data;
-            console.log(this.jogadores);
-          });
-    }
+        return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
+    }    
 }

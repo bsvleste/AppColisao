@@ -1,8 +1,6 @@
-export class Jogadores{
-    constructor(
-        public nome:string,
-        public status:string,
-        public valor:number
-    ){}
+export interface Jogadores{
+    nome:string,
+    status:string,
+    valor:number
         
 }
