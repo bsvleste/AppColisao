@@ -3,9 +3,10 @@ import { Resolve } from '@angular/router/src/interfaces';
 import { Component, NgModule } from '@angular/core';
 import { MensalidadeComponent } from './mensalidade.component';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { patch } from 'webdriver-js-extender';
 import { MesesComponent } from './meses/meses.component';
 import { MensalidadeResolver } from './guard/mensalidade.resolve';
+import { MensalidadeFormComponent } from './mensalidade-form/mensalidade-form.component';
+import { MensalidadeDiactivatedGuard } from './mensalidade.diactivated.guard';
 
 const mensalidadeRounting:Routes=[
     //adicionando rotas filhas
@@ -13,8 +14,8 @@ const mensalidadeRounting:Routes=[
         children:[
             {path:':id',component:MesesComponent,
                 resolve:{mensalidade:MensalidadeResolver}
-            }
-            //{patch:':id/edit',component:MensalidadeForm,canDeactivate:[MensalidadeDiactivatedGuard]}
+            },
+            {patch:'/edit/:id_jogador',component:MensalidadeFormComponent,canDeactivate:[MensalidadeDiactivatedGuard]}
         ]
     }
 ];

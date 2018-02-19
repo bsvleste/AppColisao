@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
 
-  private usuarioAutenticado:boolean = false;
+  usuarioAutenticado:boolean = false;
   mostraMenuEmmiter = new EventEmitter<boolean>();
   permissaoMenu = new EventEmitter<boolean>();
   emailEsenha = new EventEmitter<boolean>();

@@ -10,6 +10,7 @@ import { MensalidadeDiactivatedGuard } from './mensalidade.diactivated.guard';
 import { MesesComponent } from './meses/meses.component';
 import { MensalidadeComponent } from './mensalidade.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MensalidadeFormComponent } from './mensalidade-form/mensalidade-form.component';
 @NgModule({
     imports:[
         CommonModule,
@@ -19,7 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
         MensalidadeRoutingModules
     ],
     exports:[],
-    declarations:[MesesComponent,MensalidadeComponent],
+    declarations:[MesesComponent,MensalidadeComponent, MensalidadeFormComponent],
     providers:[
         MesesServices,
         MensalidadeDiactivatedGuard,

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() 
   {
+    
   }
   fazerLogin(form)
   {
@@ -24,9 +25,8 @@ export class LoginComponent implements OnInit {
       validaUsuarios => this.dados = validaUsuarios
     );
       this.usuario = form.value;
-      console.log(this.usuario);
+      localStorage.setItem('currentuser',JSON.stringify(this.usuario));       
       if(this.usuario.senha.length < 5 ){
-
        this.flag= true;
       }else{
         this.authService.fazerLogin(this.usuario);

@@ -13,6 +13,11 @@ export class AppComponent {
   constructor(private authService:AuthService){}
   ngOnInit()
   {
+    //mantem o usuario logado no locastorage
+    if(localStorage.getItem('currentuser'))
+    {
+      this.authService.usuarioAutenticado = true;
+    }    
     this.authService.mostraMenuEmmiter.subscribe(
       mostrar => this.mostraMenu = mostrar
     );
