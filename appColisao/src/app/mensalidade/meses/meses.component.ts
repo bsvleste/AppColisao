@@ -15,10 +15,12 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./meses.component.css']
 })
 export class MesesComponent implements OnInit {
-  inscricao:Subscription;
+  public inscricao:Subscription;
   mes:Meses;
   id_mes:number;
   jogadores:Jogadores;
+  public teste:Jogadores;
+
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
@@ -32,8 +34,7 @@ export class MesesComponent implements OnInit {
         this.mes = this.mesesServices.getMes(id);
         this.mesesServices.getMensalidade(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});        
       }
-    );
-    
+    );  
     //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes},(jog)=>{this.jogadores = jog.data});
     console.log(this.inscricao);
   } 

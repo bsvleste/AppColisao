@@ -11,13 +11,10 @@ import { MesesComponent } from '../meses/meses.component';
   templateUrl: './mensalidade-form.component.html',
   styleUrls: ['./mensalidade-form.component.css']
 })
-export class MensalidadeFormComponent implements OnInit,AfterViewInit {
-  ngAfterViewInit(): void {
-    throw new Error("Method not implemented.");
-  }
+export class MensalidadeFormComponent implements OnInit {
+  
   inscicao: Subscription;
   jogadores:Jogadores;
-
 
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
@@ -30,16 +27,14 @@ export class MensalidadeFormComponent implements OnInit,AfterViewInit {
         let id_jogador = params['id_jogador'];
         let id = params['id'];
         this.mesesServices.getMensalidade(id).subscribe(data => {
-        this.jogadores = data;
-        for(let i of data)
-        {
+          for(let i of data)
+          {
             let jogador = i;
-            if(jogador.Id_jogador == id_jogador){
-              this.jogadores = jogador;
-              console.log(this.jogadores);
-            }
-        }        
-      });        
+            if(jogador.Id_jogador == id_jogador)            
+               this.jogadores = jogador;            
+          }        
+          console.log(this.jogadores);
+        });        
       }
     )
   } 
