@@ -15,7 +15,7 @@ const mensalidadeRounting:Routes=[
             {path:':id',component:MesesComponent,
                 resolve:{mensalidade:MensalidadeResolver}
             },
-            {patch:'/edit/:id_jogador',component:MensalidadeFormComponent,canDeactivate:[MensalidadeDiactivatedGuard]}
+            {path:':id/edit/:id_jogador', component:MensalidadeFormComponent}
         ]
     }
 ];

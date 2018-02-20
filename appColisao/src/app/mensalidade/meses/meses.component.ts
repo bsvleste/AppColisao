@@ -14,7 +14,7 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
   templateUrl: './meses.component.html',
   styleUrls: ['./meses.component.css']
 })
-export class MesesComponent implements OnInit, AfterViewInit {
+export class MesesComponent implements OnInit {
   inscricao:Subscription;
   mes:Meses;
   id_mes:number;
@@ -30,26 +30,11 @@ export class MesesComponent implements OnInit, AfterViewInit {
       (params:any)=>{
         let id = params['id'];
         this.mes = this.mesesServices.getMes(id);
-        this.mesesServices.getJogadores(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});
-        /*this.http.get('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id).subscribe(
-          (data:any[])=>{
-            if(data)
-            {
-              this.jogadores = data;
-            }else{
-              this.jogadores = [];
-            }
-            console.log(this.jogadores);
-          }
-        ) */      
+        this.mesesServices.getMensalidade(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});        
       }
     );
     
     //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes},(jog)=>{this.jogadores = jog.data});
     console.log(this.inscricao);
-  }
-  ngAfterViewInit() {
-    console.log('ngAfterViewinit');
-    
-   }
+  } 
 }

@@ -8,7 +8,7 @@
             <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->    
             <label for="valor" class='{{jogador.Status == "PENDENTE" ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
             <input class="" type="text" name="" id="valor" placeholder="{{ jogador.Valor }}">
-            <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar" [routerLink]="['edit/',jogador.Id_jogador]"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             <a href='#'  class="js-status link" data-toggle="tooltip" data-placement="bottom"
             title="status" value='' data-teste ="">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>
@@ -19,3 +19,4 @@
     </div>
   </div>
 </div>
+

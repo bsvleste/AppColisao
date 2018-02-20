@@ -1,7 +1,7 @@
-import { Jogadores } from './../jogadores';
 import { HttpClient } from '@angular/common/http';
 import { Meses } from './../meses';
 import { Injectable } from "@angular/core";
+import { Jogadores } from '../jogadores';
 
 @Injectable()
 export class MesesServices
@@ -42,11 +42,11 @@ export class MesesServices
         return null;
     }
     
-    getJogadores(id:number)
+    getMensalidade(id:number)
     {
         //pc do ccsp
         return this.httpClient.get<any>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
-    }    
+    }     
 }
