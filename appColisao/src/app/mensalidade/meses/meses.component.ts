@@ -18,16 +18,15 @@ export class MesesComponent implements OnInit {
   public inscricao:Subscription;
   mes:Meses;
   id_mes:number;
-  jogadores:Jogadores;
-  public teste:Jogadores;
+  jogadores:Jogadores[];
+  public teste:Jogadores[];
 
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
               private http:HttpClient ) { }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.inscricao = this.route.params.subscribe(
       (params:any)=>{
         let id = params['id'];
@@ -36,6 +35,6 @@ export class MesesComponent implements OnInit {
       }
     );  
     //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes},(jog)=>{this.jogadores = jog.data});
-    console.log(this.inscricao);
+  
   } 
 }

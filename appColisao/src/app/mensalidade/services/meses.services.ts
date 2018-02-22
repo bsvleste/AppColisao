@@ -45,7 +45,7 @@ export class MesesServices
     getMensalidade(id:number)
     {
         //pc do ccsp
-        return this.httpClient.get<any>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
+        return this.httpClient.get<any[]>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }     
