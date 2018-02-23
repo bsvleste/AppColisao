@@ -19,7 +19,6 @@ export class MesesComponent implements OnInit {
   mes:Meses;
   id_mes:number;
   jogadores:Jogadores[];
-  public teste:Jogadores[];
 
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
@@ -30,11 +29,19 @@ export class MesesComponent implements OnInit {
     this.inscricao = this.route.params.subscribe(
       (params:any)=>{
         let id = params['id'];
+         
         this.mes = this.mesesServices.getMes(id);
         this.mesesServices.getMensalidade(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});        
       }
     );  
     //this.inscricao = this.route.data.subscribe((info)=>{this.mes = info.mes},(jog)=>{this.jogadores = jog.data});
+    
+
+  }
+  updateMensalidade(idMes:number,valor:number,idMensalidade:number)
+  {
+    let teste =  this.mesesServices.updateMensalidade(idMes,valor, idMensalidade).subscribe(data=>console.log(data));
+    return teste;
+  }
   
-  } 
 }

@@ -48,5 +48,9 @@ export class MesesServices
         return this.httpClient.get<any[]>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
+    }
+    updateMensalidade(idMes:number, valor:number,idMensalidade:number)
+    {
+        return  this.httpClient.get('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php?idMes='+idMes+'&valor='+valor+'&idMensalidade='+idMensalidade);
     }     
 }

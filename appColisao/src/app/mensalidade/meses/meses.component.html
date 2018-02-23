@@ -7,13 +7,14 @@
         <div class="cont">    
           <div class="mensalidade">
             <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->    
-            <label for="valor" class='{{jogador.Status == "PENDENTE" ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
-            <input class="" type="text" name="" id="valor" placeholder="{{ jogador.Valor }}">
+            <label for="valor" class='{{jogador.Valor <= 0 ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
+            <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">
             <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar" [routerLink]="['edit/',jogador.Id_jogador]"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-            <a href='#'  class="js-status link" data-toggle="tooltip" data-placement="bottom"
-            title="status" value='' data-teste ="">
+            <button class="js-status link" data-toggle="tooltip" data-placement="bottom"
+            title="status" value='' data-teste ="" (click)="updateMensalidade(jogador.idMes,valor.value,jogador.idMensalidade)">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>
-          </a>
+            </button>
+            <button (click)="teste()"> ola</button>
         </div>
       </div>
       <br>

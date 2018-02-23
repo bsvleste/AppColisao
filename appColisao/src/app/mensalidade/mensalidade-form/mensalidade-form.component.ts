@@ -22,11 +22,7 @@ export class MensalidadeFormComponent implements OnInit {
               private http:HttpClient ) { }
 
   ngOnInit() {
-    this.getJogadores();
-  } 
 
-  getJogadores()
-  {
     this.inscicao = this.route.params.subscribe(
       (params:any)=>{
         let id_jogador = params['id_jogador'];
