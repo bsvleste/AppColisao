@@ -2,11 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Meses } from './../meses';
 import { Injectable } from "@angular/core";
 import { Jogadores } from '../jogadores';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MesesServices
 {
     constructor(private httpClient:HttpClient){}
+    
+    private headers = new Headers({ 'Content-Type': 'application/json' });
     private jogadores:Jogadores[];
     private meses:Meses[] = [
         {id:1,descricao:'Janeneiro'},
@@ -45,12 +48,17 @@ export class MesesServices
     getMensalidade(id:number)
     {
         //pc do ccsp
-        return this.httpClient.get<any[]>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
+        return this.httpClient.get<Jogadores[]>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }
-    updateMensalidade(idMes:number, valor:number,idMensalidade:number)
+    /*updateMensalidade(idMes:number, valor:number,idMensalidade:number)
     {
         return  this.httpClient.get('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php?idMes='+idMes+'&valor='+valor+'&idMensalidade='+idMensalidade);
-    }     
+    } */
+    updateMensalidade(jogador:Jogadores): Observable<Jogadores>
+    {
+        let teste = JSON.stringify(jogador);
+        return this.httpClient.post<Jogadores>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',teste);
+    }    
 }

@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { log } from 'util';
 import { MesesServices } from './../services/meses.services';
 import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-meses',
@@ -19,6 +20,7 @@ export class MesesComponent implements OnInit {
   mes:Meses;
   id_mes:number;
   jogadores:Jogadores[];
+  jog:Jogadores;
 
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
@@ -38,10 +40,14 @@ export class MesesComponent implements OnInit {
     
 
   }
-  updateMensalidade(idMes:number,valor:number,idMensalidade:number)
+  /*updateMensalidade(idMes:number,valor:number,idMensalidade:number)
   {
-    let teste =  this.mesesServices.updateMensalidade(idMes,valor, idMensalidade).subscribe(data=>console.log(data));
+    let teste =  this.mesesServices.updateMensalidade(idMes,valor, idMensalidade).subscribe();
+    return teste;
+  }*/
+  updateMensalidade(jogador:Jogadores)
+  {
+    let teste =  this.mesesServices.updateMensalidade(jogador).subscribe(data=>this.jog = data);
     return teste;
   }
-  
 }

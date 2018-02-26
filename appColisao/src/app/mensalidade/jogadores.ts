@@ -1,9 +1,10 @@
 export interface Jogadores{
-    id_jogador:number,
-    nome:string,
-    status:string,
+    Id_jogador:number,
+    Name:string,
+    Status:string,
     valor:number,
     descicaoMes:string,
-    idMes:number
+    idMes:number,
+    idMensalidade:number
         
 }
