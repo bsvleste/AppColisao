@@ -23,20 +23,6 @@ export class MensalidadeFormComponent implements OnInit {
 
   ngOnInit() {
 
-    this.inscicao = this.route.params.subscribe(
-      (params:any)=>{
-        let id_jogador = params['id_jogador'];
-        let id = params['id'];
-        this.mesesServices.getMensalidade(id).subscribe(data => {
-          for(let i of data)
-          {
-            let jogador = i;
-            if(jogador.Id_jogador == id_jogador)            
-               this.jogadores = jogador;            
-          }        
-          console.log(this.jogadores);
-        });        
-      }
-    )
+    
   }
 }

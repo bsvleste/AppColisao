@@ -11,7 +11,7 @@
             <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">
             <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar" [routerLink]="['edit/',jogador.Id_jogador]"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             <button class="js-status link" data-toggle="tooltip" data-placement="bottom"
-            title="status" value='' data-teste ="" (click)="updateMensalidade(jogador.idMes,valor.value,jogador.idMensalidade)">
+            title="status" value='' data-teste ="" (click)="updateMensalidade(jogador)">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>
             </button>
             <button (click)="teste(jogador)"> ola</button>

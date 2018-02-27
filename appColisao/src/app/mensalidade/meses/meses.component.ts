@@ -1,5 +1,4 @@
 import { Jogadores } from './../jogadores';
-import { HttpClient } from '@angular/common/http';
 import { Http, RequestOptions } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
@@ -19,13 +18,13 @@ export class MesesComponent implements OnInit {
   public inscricao:Subscription;
   mes:Meses;
   id_mes:number;
-  jogadores:Jogadores[];
+  jogadores:any;
   jog:Jogadores;
 
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
-              private http:HttpClient ) { }
+              private http:Http ) { }
 
   ngOnInit() {    
     this.inscricao = this.route.params.subscribe(
@@ -47,7 +46,7 @@ export class MesesComponent implements OnInit {
   }*/
   updateMensalidade(jogador:Jogadores)
   {
-    let teste =  this.mesesServices.updateMensalidade(jogador).subscribe(data=>this.jog = data);
-    return teste;
+     this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
+     //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
   }
 }

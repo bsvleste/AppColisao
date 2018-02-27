@@ -48,7 +48,7 @@ export class MesesServices
     getMensalidade(id:number)
     {
         //pc do ccsp
-        return this.httpClient.get<Jogadores[]>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php?id='+id);        
+        return this.httpClient.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php',{'id':id});        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }
@@ -58,7 +58,6 @@ export class MesesServices
     } */
     updateMensalidade(jogador:Jogadores): Observable<Jogadores>
     {
-        let teste = JSON.stringify(jogador);
-        return this.httpClient.post<Jogadores>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',teste);
+        return this.httpClient.post<Jogadores>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador);
     }    
 }
