@@ -20,7 +20,7 @@ export class MesesComponent implements OnInit {
   id_mes:number;
   jogadores:any;
   jog:Jogadores;
-
+  msg:boolean = false;
   constructor(private route:ActivatedRoute,
               private mesesServices:MesesServices,
               private router:Router,
@@ -46,7 +46,19 @@ export class MesesComponent implements OnInit {
   }*/
   updateMensalidade(jogador:Jogadores)
   {
-     this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
+    this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{  
+      console.log(jogador);
+      let intervalo = setTimeout(this.teste,3000);
+      this.msg  =false;
+    },
+      (error)=>{console.log('Error'+error)});
      //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
+    this.teste();     
+
+    }
+  teste()
+  {
+    this.msg = true;
+    console.log(this.msg);
   }
 }

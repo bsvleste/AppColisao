@@ -3,11 +3,12 @@ import { Meses } from './../meses';
 import { Injectable } from "@angular/core";
 import { Jogadores } from '../jogadores';
 import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class MesesServices
 {
-    constructor(private httpClient:HttpClient){}
+    constructor(private httpClient:HttpClient,private http:Http){}
     
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private jogadores:Jogadores[];
@@ -56,8 +57,8 @@ export class MesesServices
     {
         return  this.httpClient.get('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php?idMes='+idMes+'&valor='+valor+'&idMensalidade='+idMensalidade);
     } */
-    updateMensalidade(jogador:Jogadores): Observable<Jogadores>
+    updateMensalidade(jogador:Jogadores)
     {
-        return this.httpClient.post<Jogadores>('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador);
+        return this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador);
     }    
 }
