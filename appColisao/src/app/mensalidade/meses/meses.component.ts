@@ -48,17 +48,14 @@ export class MesesComponent implements OnInit {
   {
     this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{  
       console.log(jogador);
-      let intervalo = setTimeout(this.teste,3000);
-      this.msg  =false;
+      //let intervalo = setTimeout(this.teste,3000);
+      this.msg = true;
+      setTimeout(()=>{
+        this.msg = false;
+      },2000);
+      //this.msg  = true;
     },
-      (error)=>{console.log('Error'+error)});
-     //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
-    this.teste();     
-
-    }
-  teste()
-  {
-    this.msg = true;
-    console.log(this.msg);
-  }
+    (error)=>{console.log('Error'+error)});
+    //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
+  }  
 }

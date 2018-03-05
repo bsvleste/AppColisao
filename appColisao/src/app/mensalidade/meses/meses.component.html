@@ -1,24 +1,22 @@
 <div class="bid">
-  <div class="row">  
-    <!--ngRepeat commeca aqui -->
-      Menslidade de {{ mes.descricao }}
-      <div class="alert alert-danger" rele="alert" *ngIf='msg'>
-          Alterado com sucesso
-        </div>
-      <div class="col-sm-6" *ngFor="let jogador of jogadores" >
-        
+    Menslidade de {{ mes.descricao }}    
+    <div class="row">
+    <!--ngRepeat commeca aqui -->    
+    <div class="alert alert-success" rele="alert" [style.visibility]="msg ? 'visible':'hidden'">
+        Alterado com sucesso
+     </div>  
+    <div class="col-sm-6" *ngFor="let jogador of jogadores" >
         <div class="cont">    
-        <div class="mensalidade">
+          <div class="mensalidade">
             <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->    
             <label for="valor" class='{{jogador.Valor <= 0 ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
-            <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">
-            <a href='' class="link" data-toggle="tooltip" data-placement="bottom" title="Alterar" [routerLink]="['edit/',jogador.Id_jogador]"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">            
             <a class="js-status link" data-toggle="tooltip" data-placement="bottom"
             title="status" value='' data-teste ="" (click)="updateMensalidade(jogador)">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>
-        </a>            
+            </a>            
+          </div>
         </div>
-      </div>
       <br>
     </div>
   </div>

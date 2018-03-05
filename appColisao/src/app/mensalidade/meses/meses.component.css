@@ -1,3 +1,4 @@
+
 .bid
 {
   height: auto;
@@ -47,7 +48,7 @@
 .link
 {
   box-shadow: 1px 1px 8px 1px #0025;
-  padding: 11px 5%;
+  padding: 11px 10%;
   cursor: pointer;   
 }
 .link i
@@ -63,21 +64,6 @@
  
 }
 
-@media screen and (min-width: 720px)
-{
-  .link
-  {
-    padding: 11px 4%;
-  }
-}
-
-@media screen and (max-width: 375px)
-{
-  .link
-  {
-    padding: 11px 4%;
-  }
-}
 @media screen and (max-width: 720px)
 {
   .bid{
