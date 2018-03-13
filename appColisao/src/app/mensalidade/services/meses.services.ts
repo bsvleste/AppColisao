@@ -48,8 +48,10 @@ export class MesesServices
     
     getMensalidade(id:number)
     {
+        //servidor
+        return this.httpClient.post('http://colisao.000webhostapp.com/php/mensalidadeJaneiro.php',{'id':id});
         //pc do ccsp
-        return this.httpClient.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidadeJaneiro.php',{'id':id});        
+        //return this.httpClient.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php',{'id':id});        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }
@@ -59,6 +61,6 @@ export class MesesServices
     } */
     updateMensalidade(jogador:Jogadores)
     {
-        return this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador);
+        return this.http.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador);
     }    
 }

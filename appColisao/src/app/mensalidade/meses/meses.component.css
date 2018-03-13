@@ -1,6 +1,7 @@
 
 .bid
 {
+  
   height: auto;
   /*overflow: scroll;*/
   touch-action:pan-y;
@@ -8,6 +9,8 @@
 }
 .cont
 {
+  position: relative;
+  top: -25px;
   height: 80px;
   box-shadow: 5px 10px 8px #0025; 
 }
