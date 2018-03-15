@@ -57,5 +57,14 @@ export class MesesComponent implements OnInit {
     },
     (error)=>{console.log('Error'+error)});
     //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
-  }  
+    this.inscricao = this.route.params.subscribe(
+      (params:any)=>{
+        let id = params['id'];
+         
+        this.mes = this.mesesServices.getMes(id);
+        this.mesesServices.getMensalidade(id).subscribe(data => {this.jogadores = data;console.log(this.jogadores)});        
+      }
+    );    
+  }
+  
 }

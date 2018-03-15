@@ -3,7 +3,8 @@ import { Meses } from './../meses';
 import { Injectable } from "@angular/core";
 import { Jogadores } from '../jogadores';
 import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import {RequestOptionsArgs, Http,  RequestOptions} from '@angular/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class MesesServices
@@ -46,10 +47,12 @@ export class MesesServices
         return null;
     }
     
-    getMensalidade(id:number)
+    getMensalidade(id:string)
     {
+        let params = new URLSearchParams();
+        params.set('id',id);
         //servidor
-        return this.httpClient.post('http://colisao.000webhostapp.com/php/mensalidadeJaneiro.php',{'id':id});
+        return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php'+'?id='+id);
         //pc do ccsp
         //return this.httpClient.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php',{'id':id});        
         //pc de casa
@@ -59,8 +62,23 @@ export class MesesServices
     {
         return  this.httpClient.get('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php?idMes='+idMes+'&valor='+valor+'&idMensalidade='+idMensalidade);
     } */
-    updateMensalidade(jogador:Jogadores)
+    updateMensalidade(jogador:Jogadores):Observable<Jogadores>
     {
-        return this.http.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador);
-    }    
+        let myheaders ={
+            headers: new HttpHeaders({
+                'Content-Type':'application/json',
+                'Authorization':'my-auth-token'  
+            })
+        }; 
+        
+      
+        
+        
+        //servidor
+        return this.httpClient.post<Jogadores>('https://colisao.000webhostapp.com/php/mensalidade.php', jogador,myheaders);
+        //pc do ccsp
+        // return this.http.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador);
+    }   
+
+
 }
