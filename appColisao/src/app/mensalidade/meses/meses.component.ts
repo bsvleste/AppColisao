@@ -47,7 +47,7 @@ export class MesesComponent implements OnInit {
   updateMensalidade(jogador:Jogadores)
   {
     this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{  
-      console.log(JSON.stringify(jogador));
+      console.log(jogador);
       //let intervalo = setTimeout(this.teste,3000);
       this.msg = true;
       setTimeout(()=>{
