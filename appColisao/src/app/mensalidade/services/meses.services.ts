@@ -67,15 +67,15 @@ export class MesesServices
         let myheaders ={
             headers: new HttpHeaders({
                 'Content-Type':'application/json',
-                'Authorization':'my-auth-token'  
+                'Authorization':'my-auth-token'
+               
+  
             })
         }; 
         
-      
-        
-        
-        //servidor
-        return this.httpClient.post<Jogadores>('https://colisao.000webhostapp.com/php/mensalidade.php', jogador,myheaders);
+            
+                //servidor
+        return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php', JSON.stringify(jogador));
         //pc do ccsp
         // return this.http.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador);
     }   
