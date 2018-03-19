@@ -48,6 +48,13 @@ export class MesesComponent implements OnInit {
   {
     this.mesesServices.updateMensalidade(jogador).subscribe((data)=>{  
       console.log(jogador);
+      let teste = data;
+      if(teste.Status == "PAGO")
+      {
+        console.log("PAgo");
+      }else{
+        console.log("Pendente");
+      }
       //let intervalo = setTimeout(this.teste,3000);
       this.msg = true;
       setTimeout(()=>{

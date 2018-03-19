@@ -50,6 +50,17 @@ export class MesesServices
         return null;
     }
     
+    /*getMensalidade(id:string)
+    {
+        let params = new URLSearchParams();
+        params.set('id',id);
+        //servidor
+        return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php'+'?id='+id);
+        //pc do ccsp
+        //return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
+        //pc de casa
+        //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
+    }*/
     getMensalidade(id:string)
     {
         let params = new URLSearchParams();
@@ -60,30 +71,7 @@ export class MesesServices
         //return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
-    }
-    /*updateMensalidade(idMes:number, valor:number,idMensalidade:number)
-    {
-        return  this.httpClient.get('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php?idMes='+idMes+'&valor='+valor+'&idMensalidade='+idMensalidade);
-    } */
-    /*updateMensalidade(jogador:Jogadores)
-    {
-        let myheaders ={
-            headers: new HttpHeaders({
-                'Content-Type':'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers':'Authorization,Content-Range,Content-Disposition,Origin, X-Requested-With , Content-Type',
-                'Access-Control-Allow-Methods':'GET,POST,PUT,DELETE' 
-               
-  
-            })
-        }; 
-        
-            
-        //servidor
-        return this.httpClient.post('http://colisao.000webhostapp.com/php/mensalidade.php',jogador);
-        //pc do ccsp
-        //return this.http.post('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador);
-    } */
+    }    
     updateMensalidade(jogador:Jogadores):Observable<Jogadores>{
         let json = JSON.stringify(jogador);
         let myheaders ={
@@ -93,9 +81,9 @@ export class MesesServices
         };
         //cabe.append('Content-Type','application-x-www-form-urlencoded');
         //return this.httpClient.post<Jogadores>('http://validate.jsontest.com',params,myheaders);
-        return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',{jogador});
+        //return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
         
-        //return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',jogador,myheaders);
+        return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',json);
     }  
     private handlerError(error:HttpErrorResponse)
     {
