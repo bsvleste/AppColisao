@@ -12,12 +12,12 @@ const mensalidadeRounting:Routes=[
     //adicionando rotas filhas
     {path:'',component:MensalidadeComponent,
         children:[
+            {path:'edit', component:MensalidadeFormComponent},
             {path:':id',component:MesesComponent,
                 resolve:{mensalidade:MensalidadeResolver}
-            },
-            {path:':id/edit/:id_jogador', component:MensalidadeFormComponent}
+            }           
         ]
-    }
+    },
 ];
 
 @NgModule({
