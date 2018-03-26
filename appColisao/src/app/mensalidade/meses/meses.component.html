@@ -1,16 +1,18 @@
 <div class="bid">
     Menslidade de {{ mes.descricao }}    
+      <h3>Valor total da mensalidade {{ resultado }}</h3>
     <div class="row">
-    <!--ngRepeat commeca aqui -->    
+    <!--ngRepeat commeca aqui -->
+    <H5>Fazer um formulario para cadastrar jogadores, o back-end esta pronto</H5>    
     <div class="alert alert-success" rele="alert" [style.visibility]="msg ? 'visible':'hidden'">
         Alterado com sucesso
      </div>  
     <div class="col-sm-6" *ngFor="let jogador of jogadores" >
         <div class="cont">    
           <div class="mensalidade">
-            <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->    
-            <label for="valor" class='{{jogador.Valor <= 0 ? "pendente" : "pago" }}' ><h5>{{ jogador.Name }}</h5></label>
-            <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">            
+            <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->   
+            <label for="valor" class='{{jogador.Valor <= 0 ? "pendente" : "pago" }} ||' ><h5>{{ jogador.Name }}</h5></label>
+            <input class="" type="text" name="" id="valor" #valor [(ngModel)]="jogador.Valor">
             <a class="js-status link" data-toggle="tooltip" data-placement="bottom"
             title="status" value='' data-teste ="" (click)="updateMensalidade(jogador)">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>

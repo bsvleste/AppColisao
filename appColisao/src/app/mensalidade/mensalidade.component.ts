@@ -1,5 +1,6 @@
 import { MesesServices } from './services/meses.services';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mensalidade',
@@ -11,7 +12,9 @@ export class MensalidadeComponent implements OnInit {
   flag:boolean = false;
   mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
   private meses:any[];
-  constructor(private mesesServices:MesesServices) { }
+  constructor(private mesesServices:MesesServices,
+              private route:ActivatedRoute,
+              private router:Router) { }
 
   ngOnInit() 
   {
@@ -36,5 +39,10 @@ export class MensalidadeComponent implements OnInit {
       this.openMenu();
       this.flag = false;
     }
+  }
+  editarJogador()
+  {
+    //console.log("pooora");
+    this.router.navigate(['/mensalidade/edit']);
   }
 }

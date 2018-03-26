@@ -66,9 +66,9 @@ export class MesesServices
         let params = new URLSearchParams();
         params.set('id',id);
         //servidor
-        return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php'+'?id='+id);
+        //return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php'+'?id='+id);
         //pc do ccsp
-        //return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
+        return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }    
@@ -85,17 +85,8 @@ export class MesesServices
         
         return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',json);
     }  
-    private handlerError(error:HttpErrorResponse)
+    somaMensalidade(id:string)
     {
-        if(error.error instanceof ErrorEvent){
-            console.log('An error occurred:', error.error.message);
-        }else{
-            console.log(
-                `BackEnd returned code ${error.status},`+ 
-                `Body was :${error.error}`);
-            
-        }
-        return new ErrorObservable('Something bad happened: plase try again later');
+        return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?idMes='+id);
     }
-
 }
