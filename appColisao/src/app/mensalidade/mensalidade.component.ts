@@ -39,10 +39,5 @@ export class MensalidadeComponent implements OnInit {
       this.openMenu();
       this.flag = false;
     }
-  }
-  editarJogador()
-  {
-    //console.log("pooora");
-    this.router.navigate(['/mensalidade/edit']);
-  }
+  } 
 }

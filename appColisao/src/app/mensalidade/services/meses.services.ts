@@ -8,6 +8,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import {catchError} from 'rxjs/operators';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class MesesServices
@@ -63,12 +64,14 @@ export class MesesServices
     }*/
     getMensalidade(id:string)
     {
-        let params = new URLSearchParams();
-        params.set('id',id);
+        let json = JSON.stringify(id);        
+        let p = new HttpParams();
+        p = p.append('id',id);
+
         //servidor
-        //return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php'+'?id='+id);
+        return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php', { params:p });
         //pc do ccsp
-        return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
+        //return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }    
@@ -81,12 +84,8 @@ export class MesesServices
         };
         //cabe.append('Content-Type','application-x-www-form-urlencoded');
         //return this.httpClient.post<Jogadores>('http://validate.jsontest.com',params,myheaders);
-        //return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
+        return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
         
-        return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',json);
-    }  
-    somaMensalidade(id:string)
-    {
-        return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?idMes='+id);
-    }
+        //return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',json);
+    }      
 }
