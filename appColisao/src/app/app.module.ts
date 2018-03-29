@@ -13,13 +13,15 @@ import { HomeComponent } from './home/home.component';
 import { ComponentErrorComponent } from './component-error/component-error.component';
 import { MesesComponent } from './mensalidade/meses/meses.component';
 import { MensalidadeGuard } from './guard/mensalidade.guard';
+import { JogadoresComponent } from './jogadores/jogadores.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ComponentErrorComponent
+    ComponentErrorComponent,
+    JogadoresComponent
   ],
   imports: [
     BrowserModule,
