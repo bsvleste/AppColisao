@@ -1,6 +1,10 @@
 import { Usuario } from './usuario';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { Jogadores } from '../mensalidade/jogadores';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class AuthService {
@@ -11,51 +15,50 @@ export class AuthService {
   emailEsenha = new EventEmitter<boolean>();
 
   private user:any = [
-    {email:'bvaleiro@gmail.com',senha:'aeioub',permissao:'adm'},
+    {email:'bvaleiro@gmail.com',senha:'m4r1n4',permissao:'adm'},
     {email:'mvaleiro@gmail.com',senha:'laralara',permissao:'jogador'}
   
   ];
   
   private adm:any;
   private flag:boolean = false;
-  constructor(private router:Router) { }
+  constructor(private router:Router, private http:HttpClient) { }
 
+  getUsuario(usuario:Usuario):Observable<Usuario>  
+  { 
+    let json = JSON.stringify(usuario);
+    return this.http.post<Usuario>('http://192.168.0.106/portifoliogithub/registro/app/php/login.php',usuario);
+  }
   getUser()
   {
     return this.user;
   }
-  fazerLogin(usuario:Usuario)
+  fazerLogin(usuario)
   {
-    let users = this.getUser();
-    for (let user of users) {
-      if(user.email == usuario.email && user.senha == usuario.senha)
+    this.flag = true;
+  
+    if(this.flag)
+    {
+      if(usuario[0].perm === '1')
       {
-        this.flag = true;
-        this.adm = user;
-        //console.log('teste'  + this.teste.permissao);
+       this.permissaoMenu.emit(true);
+      }else
+      {
+        this.permissaoMenu.emit(false);
         
-    }
-  }
-  if(this.flag)
-  {
-    if(this.adm.permissao === 'adm')
-    {
-      this.permissaoMenu.emit(true);
-    }else
-    {
-      this.permissaoMenu.emit(false);
-    }
-    this.usuarioAutenticado = true;
-    this.mostraMenuEmmiter.emit(true);
-    this.emailEsenha.emit(true);
-    this.router.navigate(['/']);
-  }else
-  {
-    this.emailEsenha.emit(false);
-    this.usuarioAutenticado = false;
-    this.mostraMenuEmmiter.emit(false);      
-      console.log("usuairo ou senha invalidos");
-  }
+      }
+        this.usuarioAutenticado = true;
+        this.mostraMenuEmmiter.emit(true);
+        this.emailEsenha.emit(true);
+        localStorage.setItem('mostraMenu', 'true');
+        this.router.navigate(['/']);
+      }else
+      {
+        this.emailEsenha.emit(false);
+        this.usuarioAutenticado = false;
+        this.mostraMenuEmmiter.emit(false);      
+          console.log("usuairo ou senha invalidos");
+      }
  
 } 
 

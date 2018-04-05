@@ -1,5 +1,5 @@
   <div class="container">
-    <form #f="ngForm" (ngSubmit)="fazerLogin(f)">
+    <form #f="ngForm" (ngSubmit)="getUsuario(f)">
       <app-error [mostraError]="verificaCampoInvalido(email)" msgError="Digite um email valido"></app-error>
       <app-error [mostraError]="verificaSenha()" msgError="A senha tem que ter mais que 5 digitos"></app-error>
     <app-error [mostraError]="!dados" msgError="Email ou Senha invalidos"></app-error>

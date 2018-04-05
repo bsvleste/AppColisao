@@ -10,30 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   minLength:Number = 5;
-  private usuario: Usuario = new Usuario();
+  private usuario:any;
   private flag:boolean  = false;
   dados:boolean= true;
+  usu:any;
   constructor(private authService: AuthService) { }
 
   ngOnInit() 
   {
     
   }
+  getUsuario(form)
+  {
+    this.usuario = form.value;
+    //console.log(this.usuario);
+   this.authService.getUsuario(this.usuario).subscribe(
+      data =>{ this.usu = data;console.log(this.usu[0].logado);
+        
+        this.fazerLogin(this.usu);
+      }
+    );
+  }
   fazerLogin(form)
   {
-  this.authService.emailEsenha.subscribe(
-      validaUsuarios => this.dados = validaUsuarios
-    );
-      this.usuario = form.value;
-      localStorage.setItem('currentuser',JSON.stringify(this.usuario));       
-      if(this.usuario.senha.length < 5 ){
-       this.flag= true;
-      }else{
-        this.authService.fazerLogin(this.usuario);
-        console.log(this.authService.usuarioLogado());
-        this.flag = false;
-      }
-  
+    let teste = form;
+    console.log(teste);
+    if(teste[0].logado <=0)
+    {
+      console.log('login invaldio');
+      this.dados = false;
+    }else
+    {
+        this.authService.emailEsenha.subscribe(
+        validaUsuarios => this.dados = validaUsuarios
+      );
+        this.usuario = form;
+        localStorage.setItem('currentuser',JSON.stringify(this.usuario));       
+        
+          this.authService.fazerLogin(teste);
+          console.log(this.authService.usuarioLogado());
+          this.flag = false;
+        
+    }
+    
+      
 }
   // verrifica se o campo é valido e se tem o foco
   verificaCampoInvalido(campo)

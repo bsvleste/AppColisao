@@ -14,6 +14,7 @@ import { ComponentErrorComponent } from './component-error/component-error.compo
 import { MesesComponent } from './mensalidade/meses/meses.component';
 import { MensalidadeGuard } from './guard/mensalidade.guard';
 import { JogadoresComponent } from './jogadores/jogadores.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { JogadoresComponent } from './jogadores/jogadores.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard],
   bootstrap: [AppComponent]
