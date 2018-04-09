@@ -14,16 +14,18 @@ export class AppComponent {
   ngOnInit()
   {
     //mantem o usuario logado no locastorage
-    if(localStorage.getItem('currentuser'))
-    {
-      this.authService.usuarioAutenticado = true;
+    //if(localStorage.getItem('currentuser'))
+    //{
+      /*this.authService.usuarioAutenticado = true;
       this.mostraMenu = true;
-      this.authService.mostraMenuEmmiter.subscribe(
-        mostrar => this.mostraMenu = mostrar
-      );
-      this.authService.permissaoMenu.subscribe(
-        permiMenu => this.admPermissao = permiMenu
-      );
-    }    
+      
+    }*/
+    
+    this.authService.mostraMenuEmmiter.subscribe(
+      mostrar => this.mostraMenu = mostrar
+    );
+    this.authService.permissaoMenu.subscribe(
+      permiMenu => this.admPermissao = permiMenu
+    );    
   }
 }

@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:'mensalidade',
         loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
         canActivate:[AuthGuard],
-        canActivateChild:[MensalidadeGuard]
+        canActivateChild:[MensalidadeGuard],
+        canLoad:[AuthGuard]
     },
   {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},

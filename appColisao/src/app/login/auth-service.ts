@@ -50,7 +50,7 @@ export class AuthService {
         this.usuarioAutenticado = true;
         this.mostraMenuEmmiter.emit(true);
         this.emailEsenha.emit(true);
-        localStorage.setItem('mostraMenu', 'true');
+       // localStorage.setItem('mostraMenu', 'true');
         this.router.navigate(['/']);
       }else
       {

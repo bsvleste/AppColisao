@@ -13,12 +13,27 @@ export class AuthGuard implements CanActivate, CanLoad
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean>
     {
-        if(this.authService.usuarioLogado())
+        if(localStorage.currentuser === undefined)
         {
+          console.log("nao ha localstorage");
+          if(this.authService.usuarioLogado())
+          {
+              return true;
+          }
+          this.router.navigate(['/login']);
+          return false;
+       }else{
+          console.log("ha localstorage");
+          let local = localStorage.getItem('currentuser');
+          let per = JSON.parse(local);
+          if(per[0].perm == 1 )
+          {
             return true;
+          }else{
+            this.router.navigate(['/login']);
+            return false;
+          }
         }
-        this.router.navigate(['/login']);
-        return false;
     }
     private verificaAcesso()
     {
@@ -32,6 +47,29 @@ export class AuthGuard implements CanActivate, CanLoad
     canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean>
     {
        console.log("verificnado usario");
-       return this.verificaAcesso();
+       //pega os dados do localstorage
+      
+        if(localStorage.currentuser === undefined)
+        {
+          console.log("nao ha localstorage");
+          if(this.authService.usuarioLogado())
+          {
+              return true;
+          }
+          this.router.navigate(['/login']);
+          return false;
+       }else{
+          console.log("ha localstorage");
+          let local = localStorage.getItem('currentuser');
+          let per = JSON.parse(local);
+          if(per[0].perm == 1 )
+          {
+            return true;
+          }else{
+            this.router.navigate(['/login']);
+            return false;
+          }
+        }
     }
+     
 }
