@@ -27,7 +27,7 @@ export class AuthService {
   getUsuario(usuario:Usuario):Observable<Usuario>  
   { 
     let json = JSON.stringify(usuario);
-    return this.http.post<Usuario>('http://192.168.0.106/portifoliogithub/registro/app/php/login.php',usuario);
+    return this.http.post<Usuario>('http://192.168.0.115/portifoliogithub/registro/app/php/login.php',usuario);
   }
   getUser()
   {
@@ -47,10 +47,11 @@ export class AuthService {
         this.permissaoMenu.emit(false);
         
       }
+        
         this.usuarioAutenticado = true;
         this.mostraMenuEmmiter.emit(true);
         this.emailEsenha.emit(true);
-        localStorage.setItem('mostraMenu', 'true');
+       // localStorage.setItem('mostraMenu', 'true');
         this.router.navigate(['/']);
       }else
       {
@@ -59,11 +60,18 @@ export class AuthService {
         this.mostraMenuEmmiter.emit(false);      
           console.log("usuairo ou senha invalidos");
       }
+      console.log(usuario[0].nome);
+      console.log(this.mostraMenuEmmiter);
  
 } 
 
   usuarioLogado()
   {
-    return this.usuarioAutenticado;
+        console.log("vwerdade");
+        let local = localStorage.getItem('currentuser');
+        let per = JSON.parse(local);
+      
+      return this.usuarioAutenticado;
+    
   }
 }
