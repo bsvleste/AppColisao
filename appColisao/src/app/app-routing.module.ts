@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
         canActivate:[AuthGuard],
         canActivateChild:[MensalidadeGuard],
+<<<<<<< HEAD
+=======
+        canLoad:[AuthGuard]
+>>>>>>> origin
     },
   {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},

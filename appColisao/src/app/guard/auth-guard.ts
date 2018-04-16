@@ -19,6 +19,7 @@ export class AuthGuard implements  CanLoad,CanActivate
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean>
     {
+<<<<<<< HEAD
    
         return this.verificaAcesso();
     }
@@ -30,5 +31,65 @@ export class AuthGuard implements  CanLoad,CanActivate
            }
                 this.router.navigate(['/login']);
                 return false;        
+=======
+        if(localStorage.currentuser === undefined)
+        {
+          console.log("nao ha localstorage");
+          if(this.authService.usuarioLogado())
+          {
+              return true;
+          }
+          this.router.navigate(['/login']);
+          return false;
+       }else{
+          console.log("ha localstorage");
+          let local = localStorage.getItem('currentuser');
+          let per = JSON.parse(local);
+          if(per[0].perm == 1 )
+          {
+            return true;
+          }else{
+            this.router.navigate(['/login']);
+            return false;
+          }
+        }
     }
+    private verificaAcesso()
+    {
+        if(this.authService.usuarioLogado())
+        {
+            return true;
+        }
+        this.router.navigate[('/login')];
+        return false;
+    }
+    canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean>
+    {
+       console.log("verificnado usario");
+       //pega os dados do localstorage
+      
+        if(localStorage.currentuser === undefined)
+        {
+          console.log("nao ha localstorage");
+          if(this.authService.usuarioLogado())
+          {
+              return true;
+          }
+          this.router.navigate(['/login']);
+          return false;
+       }else{
+          console.log("ha localstorage");
+          let local = localStorage.getItem('currentuser');
+          let per = JSON.parse(local);
+          if(per[0].perm == 1 )
+          {
+            return true;
+          }else{
+            this.router.navigate(['/login']);
+            return false;
+          }
+        }
+>>>>>>> origin
+    }
+     
 }

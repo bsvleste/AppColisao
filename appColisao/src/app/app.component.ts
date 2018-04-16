@@ -21,13 +21,19 @@ export class AppComponent {
       /*this.authService.usuarioAutenticado = true;
       this.mostraMenu = true;
       
+<<<<<<< HEAD
     }*/   
+=======
+    }*/
+    
+>>>>>>> origin
     this.authService.mostraMenuEmmiter.subscribe(
       mostrar => this.mostraMenu = mostrar
     );
     this.authService.permissaoMenu.subscribe(
       permiMenu => this.admPermissao = permiMenu
     );    
+<<<<<<< HEAD
   }
   ngAfterContentInit() {
     //Called after ngOnInit when the component's or directive's content has been initialized.
@@ -48,6 +54,8 @@ export class AppComponent {
      
     }
              
+=======
+>>>>>>> origin
   }
   loggof()
   {
