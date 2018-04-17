@@ -19,11 +19,11 @@ export class AuthGuard implements  CanLoad,CanActivate
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean>
     {
-<<<<<<< HEAD
+
    
         return this.verificaAcesso();
     }
-    private verificaAcesso()
+   /* private verificaAcesso()
       { 
            if(this.authService.usuarioLogado())
            {
@@ -31,8 +31,8 @@ export class AuthGuard implements  CanLoad,CanActivate
            }
                 this.router.navigate(['/login']);
                 return false;        
-=======
-        if(localStorage.currentuser === undefined)
+
+                if(localStorage.currentuser === undefined)
         {
           console.log("nao ha localstorage");
           if(this.authService.usuarioLogado())
@@ -53,17 +53,19 @@ export class AuthGuard implements  CanLoad,CanActivate
             return false;
           }
         }
-    }
+    }*/
     private verificaAcesso()
     {
         if(this.authService.usuarioLogado())
         {
+            console.log("logado");
             return true;
         }
+        console.log("deslogado");
         this.router.navigate[('/login')];
         return false;
     }
-    canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean>
+    /*canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean>
     {
        console.log("verificnado usario");
        //pega os dados do localstorage
@@ -89,7 +91,6 @@ export class AuthGuard implements  CanLoad,CanActivate
             return false;
           }
         }
->>>>>>> origin
-    }
+    }*/
      
 }

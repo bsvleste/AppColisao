@@ -21,41 +21,42 @@ export class AppComponent {
       /*this.authService.usuarioAutenticado = true;
       this.mostraMenu = true;
       
-<<<<<<< HEAD
     }*/   
-=======
-    }*/
-    
->>>>>>> origin
     this.authService.mostraMenuEmmiter.subscribe(
       mostrar => this.mostraMenu = mostrar
     );
     this.authService.permissaoMenu.subscribe(
       permiMenu => this.admPermissao = permiMenu
     );    
-<<<<<<< HEAD
   }
   ngAfterContentInit() {
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
-    if(localStorage.currentuser)
+   if(localStorage.currentuser)
     {
          console.log("vwerdade");
          let local = localStorage.getItem('currentuser');
          let per = JSON.parse(local);
-         this.authService.fazerLogin(per);   
+         if(per[0].perm == 1)
+         {
+           console.log(per[0].perm);
+           this.admPermissao = this.authService.usuarioPermissao = true;
+           this.mostraMenu = this.authService.mostraMenu = true;
+          }else{
+            this.authService.usuarioPermissao = false;
+            this.mostraMenu = this.authService.mostraMenu = true;
+          }  
+    //this.authService.fazerLogin(per);
      //return true;
-     this.authService.mostraMenuEmmiter.subscribe(
+   /* this.authService.mostraMenuEmmiter.subscribe(
       mostrar => this.mostraMenu = mostrar
     );
     this.authService.permissaoMenu.subscribe(
       permiMenu => this.admPermissao = permiMenu
-    );    
+    );*/    
      
     }
              
-=======
->>>>>>> origin
   }
   loggof()
   {

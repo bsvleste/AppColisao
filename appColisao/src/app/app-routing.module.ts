@@ -7,19 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth-guard';
 import { MensalidadeGuard } from './guard/mensalidade.guard';
 import { BidComponent } from './bid/bid.component';
+import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 /*
 usar essa rota quando tiver senha
 */
 const routes: Routes = [
   {path:'mensalidade',
-        canLoad:[AuthGuard],
+        canLoad:[AuthGuardMensalidade],
         loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
-        canActivate:[AuthGuard],
+        canActivate:[AuthGuard,AuthGuardMensalidade],
         canActivateChild:[MensalidadeGuard],
-<<<<<<< HEAD
-=======
-        canLoad:[AuthGuard]
->>>>>>> origin
     },
   {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},

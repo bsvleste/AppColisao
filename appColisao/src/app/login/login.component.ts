@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         validaUsuarios => this.dados = validaUsuarios
       );
         this.usuario = form;
-        localStorage.setItem('currentuser',JSON.stringify(this.usuario));       
+        localStorage.setItem('currentuser',JSON.stringify(this.usuario));
         
           this.authService.fazerLogin(teste);
           console.log(this.authService.usuarioLogado());

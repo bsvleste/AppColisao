@@ -10,6 +10,8 @@ import { Http } from '@angular/http';
 export class AuthService {
 
   usuarioAutenticado:boolean = false;
+  usuarioPermissao:boolean = false;
+  mostraMenu:boolean = false;
   mostraMenuEmmiter = new EventEmitter<boolean>();
   permissaoMenu = new EventEmitter<boolean>();
   emailEsenha = new EventEmitter<boolean>();
@@ -42,8 +44,11 @@ export class AuthService {
       if(usuario[0].perm === '1')
       {
        this.permissaoMenu.emit(true);
+       this.usuarioPermissao = true;
+       
       }else
       {
+        this.usuarioPermissao = false;
         this.permissaoMenu.emit(false);
         
       }
@@ -61,17 +66,33 @@ export class AuthService {
           console.log("usuairo ou senha invalidos");
       }
       console.log(usuario[0].nome);
-      console.log(this.mostraMenuEmmiter);
  
 } 
-
+  usuarioPermi()
+  {
+    console.log("vwerdade");
+    let local = localStorage.getItem('currentuser');
+    let per = JSON.parse(local);
+     
+    if(per[0].perm == 1)
+    {
+      return this.usuarioAutenticado = true;
+    }else{
+      return this.usuarioAutenticado =false;
+    }
+  }
   usuarioLogado()
   {
-        console.log("vwerdade");
-        let local = localStorage.getItem('currentuser');
-        let per = JSON.parse(local);
-      
-      return this.usuarioAutenticado;
-    
+      console.log("vwerdade");
+      let local = localStorage.getItem('currentuser');
+      let per = JSON.parse(local);
+       
+      if(localStorage.currentuser)
+      {
+        return this.usuarioAutenticado = true;
+      }else{
+        return this.usuarioAutenticado =false;
+      }
+        
   }
 }

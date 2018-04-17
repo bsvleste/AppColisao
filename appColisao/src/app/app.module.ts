@@ -15,6 +15,7 @@ import { MesesComponent } from './mensalidade/meses/meses.component';
 import { MensalidadeGuard } from './guard/mensalidade.guard';
 import { JogadoresComponent } from './jogadores/jogadores.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard],
+  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
