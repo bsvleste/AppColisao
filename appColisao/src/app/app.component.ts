@@ -1,5 +1,5 @@
 import { AuthService } from './login/auth-service';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+  @ViewChild('window-size') myWindow: ElementRef;
+  @ViewChild('screen-size') myScreen: ElementRef;
   title = 'app';
   mostraMenu:boolean = false;
   admPermissao:boolean = false;
@@ -70,5 +71,4 @@ export class AppComponent {
     console.log("limpando o localstorage");
     window.localStorage.clear();
    }
-
 }

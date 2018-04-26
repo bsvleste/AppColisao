@@ -1,28 +1,86 @@
-<div class="panel panel-default"style="margin-bottom:100px;overflow:auto;">
-    <div class="panel-heading">
-      <h3 class="text-center">{{ bid }}</h3>
+
+<div class="container">
+<!-- mostra a o tiempo do bid -->
+    <div class="cadastroBid navbar-fixed-top">
+        <p id="contador" class="text-center conometro">{{msg}}</p>
     </div>
-  
-    <div class="panel-body">
-        <div class="container">
-            <div class="row">
-                <div class='col-sm-10'>
-                    <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker1').datetimepicker();
-                    });
-                </script>
-            </div>
+    <!-- mostra a quantidade de resposta do bid -->
+    <div class="resultado navbar-fixed-top">			
+        <div class="col-xs-4">
+            5<span><i class="fa fa-check-circle fa-2x" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-xs-4">
+            2<span><i class="fa fa-ambulance fa-2x" aria-hidden="true"></i></span>
+        </div>
+        <div class="col-xs-4">
+            1<span><i class="fa fa-times-circle fa-2x" aria-hidden="true"></i></span>
         </div>
     </div>
-  </div>
+
+    <!-- formulario de cadastro de usuario-->
+    <div class="cadastroUsuario" #cadastroBid style="display:block;">
+        <div class="closeMenu">
+            <span (click)="mostraCadastro()" class=""><i class="fa fa-window-close fa-3x" aria-hidden="true"></i></span>
+        </div>
+        <div>
+            <form action="">
+            <div class="alinhaResposta">
+                <div class="form-group">
+                    <span class="check"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                          <input type="radio" checked="checked" name="radio">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="DontCheck"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                          <input type="radio" checked="checked" name="radio">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-warning btn-lg">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    <button class="btn-registro" (click)="mostraCadastro()" ng-show="jogadores">send</button>
+    
+    <div class="bid">
+        <div class="scroll">
+            <div >                
+                <span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
+                <br><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br>  <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
+      
+            </div>    
+        </div>
+    </div>		
+</div>
   

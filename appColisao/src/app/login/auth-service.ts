@@ -73,13 +73,16 @@ export class AuthService {
     console.log("vwerdade");
     let local = localStorage.getItem('currentuser');
     let per = JSON.parse(local);
-     
-    if(per[0].perm == 1)
+    if(per)
     {
-      return this.usuarioAutenticado = true;
-    }else{
-      return this.usuarioAutenticado =false;
-    }
+
+      if(per[0].perm == 1)
+      {
+        return this.usuarioAutenticado = true;
+      }else{
+        return this.usuarioAutenticado =false;
+      }
+    } 
   }
   usuarioLogado()
   {

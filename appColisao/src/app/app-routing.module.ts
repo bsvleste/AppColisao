@@ -13,14 +13,16 @@ usar essa rota quando tiver senha
 */
 const routes: Routes = [
   {path:'mensalidade',
-        canLoad:[AuthGuardMensalidade],
-        loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
-        canActivate:[AuthGuard,AuthGuardMensalidade],
-        canActivateChild:[MensalidadeGuard],
-    },
+    canLoad:[AuthGuardMensalidade],
+    loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
+    canActivate:[AuthGuard,AuthGuardMensalidade],
+    canActivateChild:[MensalidadeGuard],
+  },
+  {path:'bid',
+    loadChildren:'app/bid/bid.module#BidModule',
+    canActivate:[AuthGuard]},
   {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
   {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
-  {path:"bid",component:BidComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
 ];
 

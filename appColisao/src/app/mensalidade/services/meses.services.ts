@@ -15,9 +15,9 @@ export class MesesServices
 {
     constructor(private httpClient:HttpClient,private http:Http){}
     
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private jogadores:Jogadores[];
-    private meses:Meses[] = [
+    public headers = new Headers({ 'Content-Type': 'application/json' });
+    public jogadores:Jogadores[];
+    public meses:Meses[] = [
         {id:1,descricao:'Janeneiro'},
         {id:2,descricao:'Fevereiro'},
         {id:3,descricao:'Março'},
@@ -68,10 +68,10 @@ export class MesesServices
         let p = new HttpParams();
         p = p.append('id',id);
 
-        //servidor
-        return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php', { params:p });
+        //servidorhttp://
+        //return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php', { params:p });
         //pc do ccsp
-        //return this.httpClient.get('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
+        return this.httpClient.get('http://169.254.73.255/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }    
@@ -84,8 +84,8 @@ export class MesesServices
         };
         //cabe.append('Content-Type','application-x-www-form-urlencoded');
         //return this.httpClient.post<Jogadores>('http://validate.jsontest.com',params,myheaders);
-        return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
+        //return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
         
-        //return this.httpClient.post<Jogadores>('http://192.168.0.106/portifoliogithub/registro/app/php/mensalidade.php',json);
+        return this.httpClient.post<Jogadores>('http://169.254.73.255/portifoliogithub/registro/app/php/mensalidade.php',json);
     }      
 }

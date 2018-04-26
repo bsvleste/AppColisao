@@ -3,9 +3,9 @@
     font-size: 3em;
 }
 .meses{
-    margin-top: -20px;
-    height: 50px;
-    background-color: cadetblue;
+  margin-top:100px; 
+  height: 50px;
+  background-color: cadetblue;
 }
 .meses span 
 {

@@ -2,7 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { MensalidadeResolver } from './guard/mensalidade.resolve';
 import { MesesServices } from './services/meses.services';
 import { MensalidadeRoutingModules } from './mensalidade.routing.modules';
@@ -25,6 +25,7 @@ import { MensalidadeFormComponent } from './mensalidade-form/mensalidade-form.co
         MesesServices,
         MensalidadeDiactivatedGuard,
         MensalidadeResolver,
+        {provide:LocationStrategy, useClass:HashLocationStrategy}
     ]
 })
 export class MensalidadeModule{}

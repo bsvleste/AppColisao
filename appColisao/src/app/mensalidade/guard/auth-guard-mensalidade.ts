@@ -29,7 +29,7 @@ export class AuthGuardMensalidade implements CanActivate,CanLoad
             return true;
         }
         console.log("deslocago menslaidade");
-        this.router.navigate[('/login')];
+        this.router.navigate(['/home']);
         return false;
     }    
 }

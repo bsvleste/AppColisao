@@ -3,10 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>AppColisao</title>
-  <base href="/">
+  <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<script>
+  function sizeOfThings()
+  {
+
+    var wWidht = window.innerWidth;
+    var wHeight = window.innerHeight;
+    
+    var sWidth = screen.width;
+    var sHeight = screen.height;
+    
+  console.log("Resolucaio da Tela " + wWidht + 'x' + wHeight);
+  console.log("Tamnaho da tela" + sWidth + 'x' + sHeight);
+  
+  }
+  sizeOfThings();
+
+  window.addEventListener('resize', function(){
+    sizeOfThings();
+  });
+</script>
 <body>
   <app-root></app-root>
 </body>

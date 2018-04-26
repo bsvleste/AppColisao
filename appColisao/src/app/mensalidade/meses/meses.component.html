@@ -1,13 +1,13 @@
-<div class="bid">
+<div class="container">
+  <div class="bid">
     Menslidade de {{ mes.descricao }}    
       <h3>Valor total da mensalidade {{ resultado }}</h3>
     <div class="row">
-    <!--ngRepeat commeca aqui -->
-    <H5>Fazer um modulo para cadastrar jogadores, o back-end esta pronto</H5>    
+      <!--ngRepeat commeca aqui -->   
     <div class="alert alert-success" rele="alert" [style.visibility]="msg ? 'visible':'hidden'">
         Alterado com sucesso
      </div>  
-    <div class="col-sm-6" *ngFor="let jogador of jogadores" >
+     <div class="col-sm-6" *ngFor="let jogador of jogadores" >
         <div class="cont">    
           <div class="mensalidade">
             <!--class='{{mes.descricao == "PENDENTE" ? "pago" : "pendente" }}'-->   
@@ -16,11 +16,12 @@
             <a class="js-status link" data-toggle="tooltip" data-placement="bottom"
             title="status" value='' data-teste ="" (click)="updateMensalidade(jogador)">
             <i class="fa fa-check-square-o" id="js-status" aria-hidden="true" ></i>
-            </a>            
+          </a>            
           </div>
         </div>
       <br>
     </div>
   </div>
+</div>
 </div>
 

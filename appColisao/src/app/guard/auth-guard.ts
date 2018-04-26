@@ -62,7 +62,7 @@ export class AuthGuard implements  CanLoad,CanActivate
             return true;
         }
         console.log("deslogado");
-        this.router.navigate[('/login')];
+        this.router.navigate(['/login']);
         return false;
     }
     /*canLoad(route: Route): boolean | Observable<boolean> | Promise<boolean>

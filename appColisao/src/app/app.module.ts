@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MensalidadeComponent } from './mensalidade/mensalidade.component';
-import { BidComponent } from './bid/bid.component';
 import { HomeComponent } from './home/home.component';
 import { ComponentErrorComponent } from './component-error/component-error.component';
 import { MesesComponent } from './mensalidade/meses/meses.component';
@@ -16,6 +15,7 @@ import { MensalidadeGuard } from './guard/mensalidade.guard';
 import { JogadoresComponent } from './jogadores/jogadores.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade
     LoginComponent,
     HomeComponent,
     ComponentErrorComponent,
-    JogadoresComponent,
-    BidComponent
+    JogadoresComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,7 @@ import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade],
+  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade, {provide:LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
