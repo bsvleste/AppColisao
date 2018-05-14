@@ -33,7 +33,7 @@ export class AppComponent {
   ngAfterContentInit() {
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
-   if(localStorage.currentuser)
+  if(localStorage.currentuser)
     {
          console.log("vwerdade");
          let local = localStorage.getItem('currentuser');
@@ -56,7 +56,7 @@ export class AppComponent {
       permiMenu => this.admPermissao = permiMenu
     );*/    
      
-    }
+  }
              
   }
   loggof()

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MensalidadeComponent implements OnInit {
   @ViewChild('mySidebar') myDiv: ElementRef;
   flag:boolean = false;
-  mensalidade:string = "Bem Vindo ao Controle de Mensalidade";
+  mensalidade:string = "Controle de Mensalidade";
   public meses:any[];
   constructor(private mesesServices:MesesServices,
               private route:ActivatedRoute,

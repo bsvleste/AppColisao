@@ -3,7 +3,8 @@
     font-size: 3em;
 }
 .meses{
-  margin-top:100px; 
+  z-index:4; 
+  margin-top:50px; 
   height: 50px;
   background-color: cadetblue;
 }
@@ -16,16 +17,17 @@
 }
 .menu
 {
-    margin-top: -21px;
-    position: absolute;
-    z-index: 5;
+    margin-top: -71px;
+    position: fixed;
+    z-index: 6;
     height: 90%; 
     width: 40%;
     background: #656d78;
+    
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.2s;
     animation-name: animatetop;
-    animation-duration: 0.2s
+    animation-duration: 0.2s;
 }
 .menu ul {
   list-style-type:none;
@@ -68,6 +70,13 @@
 {
   .menu
   {
+    z-index: 7;
     width: 70%;
+    overflow-y: scroll;
+    touch-action:pan-y;
+  }
+  .menu ul
+  {
+    margin-bottom: 80px;
   }
 }

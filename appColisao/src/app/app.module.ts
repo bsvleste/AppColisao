@@ -16,6 +16,8 @@ import { JogadoresComponent } from './jogadores/jogadores.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { FirebaseConfig } from '../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,14 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     HomeComponent,
     ComponentErrorComponent,
     JogadoresComponent
-   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(FirebaseConfig),
+    
   ],
   providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade, {provide:LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]

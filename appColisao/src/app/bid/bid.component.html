@@ -1,5 +1,51 @@
 
 <div class="container">
+
+<!-- formulario de cadastro de usuario-->
+    <div class="bid">
+        <div class="cadastroUsuario" #cadastroBid >
+            <div class="closeMenu">
+                <span (click)="mostraCadastro()" class=""><i class="fa fa-window-close fa-3x" aria-hidden="true"></i></span>
+            </div>
+        <div>
+                <form #f="ngForm" (ngSubmit)="cadBid(f)">
+                <div class="alinhaResposta">
+                <div class="form-group">
+                    <span class="check"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                            <input type="radio" checked="checked" name="radio" #confirmado="ngModel" ngModel value="confirmado">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                          <input type="radio" checked="checked" name="radio" #dm="ngModel" ngModel value="dm"> 
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="DontCheck"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i></span>
+                    <div class="central">
+                        <label class="switch">
+                          <input type="radio" checked="checked" name="radio" #falta="ngModel" ngModel value="falta">
+                          <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <button class="btn btn-warning btn-lg" type="submit" (click)="mostraCadastro()">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <!-- mostra a o tiempo do bid -->
     <div class="cadastroBid navbar-fixed-top">
         <p id="contador" class="text-center conometro">{{msg}}</p>
@@ -17,68 +63,18 @@
         </div>
     </div>
 
-    <!-- formulario de cadastro de usuario-->
-    <div class="cadastroUsuario" #cadastroBid style="display:block;">
-        <div class="closeMenu">
-            <span (click)="mostraCadastro()" class=""><i class="fa fa-window-close fa-3x" aria-hidden="true"></i></span>
-        </div>
-        <div>
-            <form action="">
-            <div class="alinhaResposta">
-                <div class="form-group">
-                    <span class="check"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
-                    <div class="central">
-                        <label class="switch">
-                            <input type="radio" checked="checked" name="radio">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
-                    <div class="central">
-                        <label class="switch">
-                          <input type="radio" checked="checked" name="radio">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <span class="DontCheck"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i></span>
-                    <div class="central">
-                        <label class="switch">
-                          <input type="radio" checked="checked" name="radio">
-                          <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-warning btn-lg">Enviar</button>
-            </form>
-        </div>
-    </div>
     
     
-    <button class="btn-registro" (click)="mostraCadastro()" ng-show="jogadores">send</button>
+    
+    <button class="btn-registro" (click)="mostraCadastro()" >Bid</button>
     
     <div class="bid">
         <div class="scroll">
-            <div >                
-                <span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
-                <br><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br>  <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-                <br><span  class="DontCheck"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span><span><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></span>
-      
+            <div *ngFor="let p of exibeDados | async"  [ngSwitch]="p.bid.radio">
+                {{ p.id }}
+                <span  class="dm" *ngSwitchCase="'dm'"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i> <i class="fa fa-trash"></i> <i class="fa fa-pencil"></i></span>
+                <span class="check"*ngSwitchCase="'confirmado'"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i> <i class="fa fa-trash"></i> <i class="fa fa-pencil"></i></span>
+                <span class="DontCheck" *ngSwitchCase="'falta'"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i> <i class="fa fa-trash"></i> <i class="fa fa-pencil"></i></span>                
             </div>    
         </div>
     </div>		

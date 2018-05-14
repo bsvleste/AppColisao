@@ -12,11 +12,15 @@ body
 }
 /*div onde fica o botao para iniciar o cadastro da bid*/
 .cadastroBid{
-  margin-top: 100px;
+  margin-top: 50px;
   height: 30px;
   background: white;
+  z-index: 1;
 }
-
+.closeMenu{
+  background-color: #ffce54;
+  height: 45px;
+}
 /*span de dentro do menu*/
 .closeMenu>span
 {
@@ -57,12 +61,11 @@ body
 }
 .scroll
 {
-    margin-top: 175px;
     margin-bottom:80px;
     background: white;
     overflow-y: scroll; 
     touch-action:pan-y;
-    z-index: -1;
+    z-index: 1;
 }
 /*botao para registrar o usuario no bid*/
 .btn-registro
@@ -105,12 +108,14 @@ body
   cursor: pointer;
 }
 /*cadastro do usuario*/
+
 .cadastroUsuario
 {
-  margin-top:180px;
-  height: 450px;
-  width: 95%;
-  z-index: 15;
+  position: fixed;
+  margin-top:-60px;
+  height: 70%;
+  width: 85%;
+  z-index: 5;
   background-color: #ecf0f1;
 }
 .cadastroUsuario > span
@@ -120,9 +125,10 @@ body
 /*resultado do bid*/
 .resultado
 {
-  margin-top:130px;
+  margin-top:80px;
   height: 40px;
   background: red;
+  z-index: 1;
 }
 /* fundo do slider */
 .switch {
@@ -255,12 +261,11 @@ input:checked + .slider:before {
  }
   
 }
-@media (max-height: 731px)
+*/
+@media (min-width: 731px)
 {
-  .scroll{
-    height: 60%;
-     bottom: 10%;
+  .cadastroUsuario{
+    width: 80%;
  }
   
 }
-*/

@@ -1,12 +1,17 @@
 
 .bid
 {
-  
   height: auto;
   /*overflow: scroll;*/
   touch-action:pan-y;
-  margin-top:80px;
+  margin-top:5px;
   margin-bottom: 60px; 
+}
+.msg{
+  position:fixed;
+  z-index: 2;
+  width: 95%;
+  padding-left: 15px;
 }
 .cont
 {

@@ -29,7 +29,7 @@ export class AuthService {
   getUsuario(usuario:Usuario):Observable<Usuario>  
   { 
     let json = JSON.stringify(usuario);
-    return this.http.post<Usuario>('http://192.168.0.115/portifoliogithub/registro/app/php/login.php',usuario);
+    return this.http.post<Usuario>('http://192.168.0.100/portifoliogithub/registro/app/php/login.php',usuario);
   }
   getUser()
   {

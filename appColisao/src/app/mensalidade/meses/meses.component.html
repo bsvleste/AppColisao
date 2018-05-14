@@ -4,9 +4,12 @@
       <h3>Valor total da mensalidade {{ resultado }}</h3>
     <div class="row">
       <!--ngRepeat commeca aqui -->   
-    <div class="alert alert-success" rele="alert" [style.visibility]="msg ? 'visible':'hidden'">
+      <!--[style.visibility]="msg ? 'visible':'hidden'"-->
+    <div class="msg" [style.visibility]="msg ? 'visible':'hidden'">
+     <div class="alert alert-success" rele="alert" >
         Alterado com sucesso
-     </div>  
+      </div>  
+    </div>
      <div class="col-sm-6" *ngFor="let jogador of jogadores" >
         <div class="cont">    
           <div class="mensalidade">
