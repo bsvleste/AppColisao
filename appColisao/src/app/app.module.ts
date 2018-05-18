@@ -18,6 +18,7 @@ import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FirebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { AngularFireModule } from 'angularfire2/index';
     AngularFireModule.initializeApp(FirebaseConfig),
     
   ],
-  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade, {provide:LocationStrategy, useClass:HashLocationStrategy}],
+  providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade, {provide:LocationStrategy, useClass:HashLocationStrategy},AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

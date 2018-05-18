@@ -71,7 +71,7 @@ export class MesesServices
         //servidorhttp://
         //return this.httpClient.get('https://colisao.000webhostapp.com/php/mensalidadeJaneiro.php', { params:p });
         //pc do ccsp
-        return this.httpClient.get('http://192.168.0.100/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
+        return this.httpClient.get('http://192.168.0.122/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc de casa
         //return this.httpClient.get<any>('http://192.168.1.58/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }    
@@ -86,6 +86,6 @@ export class MesesServices
         //return this.httpClient.post<Jogadores>('http://validate.jsontest.com',params,myheaders);
         //return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
         
-        return this.httpClient.post<Jogadores>('http://192.168.0.100/portifoliogithub/registro/app/php/mensalidade.php',json);
+        return this.httpClient.post<Jogadores>('http://192.168.0.122/portifoliogithub/registro/app/php/mensalidade.php',json);
     }      
 }

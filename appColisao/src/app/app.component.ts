@@ -1,6 +1,7 @@
 import { AuthService } from './login/auth-service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   title = 'app';
   mostraMenu:boolean = false;
   admPermissao:boolean = false;
-  constructor(private authService:AuthService, private router:Router){}
+  constructor(private authService:AuthService, private router:Router, public authFirebase:AngularFireAuth){}
   ngOnInit()
   {
     //mantem o usuario logado no locastorage
@@ -63,8 +64,19 @@ export class AppComponent {
   {
     this.clearLocal();
     this.router.navigate(['/login']);
-    return this.mostraMenu = false;        
-    
+    /*logoff do firebase
+    this.authFirebase.auth.signOut().then(function() {
+      // Sign-out successful.
+      console.log("Você não esta logado");
+      	
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error.code);
+      console.log(error.message);
+      alert("Falha ao cadastra , verifique o erro no console");
+    });
+    */
+    return this.mostraMenu = false;      
   }
   clearLocal()
   {

@@ -1,3 +1,4 @@
+import {AngularFireAuth} from 'angularfire2/auth';
 import { log } from 'util';
 import { AuthService } from './auth-service';
 import { Usuario } from './usuario';
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   private flag:boolean  = false;
   dados:boolean= true;
   usu:any;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,public authFirebase:AngularFireAuth) { }
 
   ngOnInit() 
   {
@@ -33,6 +34,19 @@ export class LoginComponent implements OnInit {
   }
   fazerLogin(form)
   {
+    /*login do firebase
+    this.authFirebase.auth.signInWithEmailAndPassword(this.usuario.email, this.usuario.senha).
+		then(function(){
+      console.log("logado");
+		})
+		.catch(function(error) {
+  		// Handle Errors here.
+  		var errorCode = error.code;
+  		var errorMessage = error.message;
+  		console.log(errorCode,errorMessage);
+  	// ...
+  });*/
+  //login do servidor
     let teste = form;
     console.log(teste);
     if(teste[0].logado <=0)
