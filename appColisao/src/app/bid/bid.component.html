@@ -71,8 +71,8 @@
     
     <div class="bid">
         <div class="scroll">
-            <div *ngFor="let p of exibeDados | async"  [ngSwitch]="p.bid.radio" >
-                {{ p.id }}
+            <div *ngFor="let p of guarda"  [ngSwitch]="p.bid" >
+                {{ p.Name }}
                 <span  class="dm" *ngSwitchCase="'dm'"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i> </span>
                 <span class="check"*ngSwitchCase="'confirmado'"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
                 <span class="DontCheck" *ngSwitchCase="'falta'"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i> </span>

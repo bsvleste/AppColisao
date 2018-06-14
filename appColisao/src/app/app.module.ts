@@ -16,9 +16,9 @@ import { JogadoresComponent } from './jogadores/jogadores.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { FirebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { FirebaseConfig } from '../environments/firebase.config';
 
 @NgModule({
   declarations: [

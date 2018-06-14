@@ -87,5 +87,9 @@ export class MesesServices
         //return this.httpClient.post<Jogadores>('http://colisao.000webhostapp.com/php/mensalidade.php',json);
         
         return this.httpClient.post<Jogadores>('http://192.168.0.122/portifoliogithub/registro/app/php/mensalidade.php',json);
+    }
+    getBidCad()
+    {
+        return this.httpClient.get('http://192.168.0.122/portifoliogithub/registro/app/php/bidCadastrado.php');  
     }      
 }
