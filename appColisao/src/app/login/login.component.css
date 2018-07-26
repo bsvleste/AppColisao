@@ -1,5 +1,4 @@
-
-.form-control
+ .form-control
 {
     border-top: 0 black;
     border-left: 0 black;
@@ -22,7 +21,7 @@
 
 }
 .has-error>input{
-    border-top: 0 black;
+    border-top: 0 black; 
     border-left: 0 black;
     border-right: 0 black;
     border-bottom: 0.5px solid red;
@@ -36,4 +35,11 @@
 .label{
     color:#566471;
     font-size: 1.3em;
+}
+@media (min-width: 731px)
+{
+  .container{
+    width:50%;
+  }
+  
 }

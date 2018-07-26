@@ -25,7 +25,7 @@ export class BidComponent implements OnInit {
   constructor( private angularFire: AngularFireDatabase, public bd:AngularFireDatabase, private httpPots:HttpClient) {
     //this.exibeDados  = bd.list('bid');
     
-      this.httpPots.get('http://192.168.0.122/portifoliogithub/registro/app/php/bidCadastrado.php')
+      this.httpPots.get('http://192.168.0.125/portifoliogithub/registro/app/php/bidCadastrado.php')
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)
@@ -39,9 +39,9 @@ export class BidComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.mostraCadastro();
+   this.mostraCadastro();
     this.intervalSet = setInterval(()=>{
-      this.httpPots.get('http://192.168.0.122/portifoliogithub/registro/app/php/bidCadastrado.php')
+      this.httpPots.get('http://192.168.0.125/portifoliogithub/registro/app/php/bidCadastrado.php')
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)
@@ -55,11 +55,13 @@ export class BidComponent implements OnInit {
   closeCad()
   {
     this.myDiv.nativeElement.style.display = "none";
+    this.bidBtn.nativeElement.style.display = "block";
   }
   openCad()
   { 
   
     this.myDiv.nativeElement.style.display = "block";
+    this.bidBtn.nativeElement.style.display = "none";
   }
   mostraCadastro()
   { 
@@ -79,7 +81,7 @@ export class BidComponent implements OnInit {
       this.respostaBid = form.value;
       let teste = JSON.parse(localStorage.getItem('currentuser'));
       let jogador = {"id_user":teste[0].id,"bid":this.respostaBid};
-      this.httpPots.post('http://192.168.0.122/portifoliogithub/registro/app/php/somaMensalidade.php',jogador)
+      this.httpPots.post('http://192.168.0.125/portifoliogithub/registro/app/php/somaMensalidade.php',jogador)
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)

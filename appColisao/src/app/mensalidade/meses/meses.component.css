@@ -17,7 +17,7 @@
 {
   position: relative;
   top: -25px;
-  height: 80px;
+  height: 100px;
   box-shadow: 5px 10px 8px #0025; 
 }
 .pago
@@ -37,13 +37,13 @@
 }
 .mensalidade>label
 {
-  width: 33%;  
+  width:70%;  
   color:white;
   padding-left: 5px;  
 }
 .mensalidade>input
 {
-  width: 33%;
+  width: 50%;
   padding: 7px;
   position: relative;
   left: -5.5px;
@@ -70,4 +70,28 @@
   -moz-box-shadow: inset 1px 1px 5px 5px #0025;
   box-shadow: inset 1px 1px 5px 5px #0025;
  
+}
+.slider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: whitesmoke;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  position: relative;
+  top: 20px;
+}
+.slider:hover
+{
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
 }

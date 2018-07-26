@@ -1,15 +1,11 @@
-
-<div class="container">
-
-<!-- formulario de cadastro de usuario-->
-    <div class="bid">
+<div class="bid">
         <div class="cadastroUsuario" #cadastroBid >
             <div class="closeMenu">
                 <span (click)="mostraCadastro()" class=""><i class="fa fa-window-close fa-3x" aria-hidden="true"></i></span>
             </div>
         <div>
-                <form #f="ngForm" (ngSubmit)="cadBid(f)">
-                <div class="alinhaResposta">
+        <form #f="ngForm" (ngSubmit)="cadBid(f)">
+            <div class="alinhaResposta">
                 <div class="form-group">
                     <span class="check"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
                     <div class="central">
@@ -20,11 +16,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <span  class="dm"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i></span>
+                    <span  class="dm"><i class="fa fa-ambulance fa-4x" aria-hidden="true"></i></span>
                     <div class="central">
                         <label class="switch">
-                          <input type="radio" checked="checked" name="radio" #dm="ngModel" ngModel value="dm"> 
-                          <span class="slider round"></span>
+                            <input type="radio" checked="checked" name="radio" #dm="ngModel" ngModel value="dm"> 
+                            <span class="slider round"></span>
                         </label>
                     </div>
                 </div>
@@ -32,53 +28,55 @@
                     <span class="DontCheck"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i></span>
                     <div class="central">
                         <label class="switch">
-                          <input type="radio" checked="checked" name="radio" #falta="ngModel" ngModel value="falta">
-                          <span class="slider round"></span>
+                            <input type="radio" checked="checked" name="radio" #falta="ngModel" ngModel value="falta">
+                            <span class="slider round"></span>
                         </label>
                     </div>
                 </div>
             </div>
-    
             <button class="btn btn-warning btn-lg" type="submit" (click)="mostraCadastro()">Enviar</button>
-            </form>
+        </form>
         </div>
-    </div>
+        </div>
 </div>
 
+<!-- mostra a o tempo do bid -->
+<div class="cadastroBid navbar-fixed-top">
+    <p id="contador" class="text-center conometro">{{msg}}</p>
+</div>
+<!-- mostra a quantidade de resposta do bid -->
 
-<!-- mostra a o tiempo do bid -->
-    <div class="cadastroBid navbar-fixed-top">
-        <p id="contador" class="text-center conometro">{{msg}}</p>
+<button class="btn-registro" (click)="mostraCadastro()" #btnBid >Bid</button>
+<div class="resultado navbar-fixed-top">
+        <div class="container">
+            <div class="bid">
+    
+                <div class="col-xs-4">
+                5<span class="check"><i class="fa fa-check-circle fa-1x" aria-hidden="true"></i></span>
+            </div>
+            <div class="col-xs-4">
+                2<span class="dm"><i class="fa fa-ambulance fa-1x" aria-hidden="true"></i></span>
+            </div>
+            <div class="col-xs-4">
+                1<span class="DontCheck"><i class="fa fa-times-circle fa-1x" aria-hidden="true"></i></span>
+            </div>
+        </div>
+        </div>			
     </div>
-    <!-- mostra a quantidade de resposta do bid -->
-    <div class="resultado navbar-fixed-top">			
-        <div class="col-xs-4">
-            5<span><i class="fa fa-check-circle fa-2x" aria-hidden="true"></i></span>
-        </div>
-        <div class="col-xs-4">
-            2<span><i class="fa fa-ambulance fa-2x" aria-hidden="true"></i></span>
-        </div>
-        <div class="col-xs-4">
-            1<span><i class="fa fa-times-circle fa-2x" aria-hidden="true"></i></span>
-        </div>
-    </div>
-
-    
-    
-    
-    <button class="btn-registro" (click)="mostraCadastro()" #btnBid >Bid</button>
-    <button class="btn-registro" (click)="mostraCadastro()" #btnEnviar >Enviar</button>
-    
+<div class="container">
     <div class="bid">
         <div class="scroll">
-            <div *ngFor="let p of guarda"  [ngSwitch]="p.bid" >
-                {{ p.Name }}
-                <span  class="dm" *ngSwitchCase="'dm'"><i class="fa fa-ambulance fa-5x" aria-hidden="true"></i> </span>
-                <span class="check"*ngSwitchCase="'confirmado'"><i class="fa fa-check-circle fa-5x" aria-hidden="true"></i></span>
-                <span class="DontCheck" *ngSwitchCase="'falta'"><i class="fa fa-times-circle fa-5x" aria-hidden="true"></i> </span>
-            </div>
+            <div *ngFor="let p of guarda"  [ngSwitch]="p.bid">
+                <div class="cont chip">
+                    {{ p.Name }}
+                    <span  class="dm .span" *ngSwitchCase="'dm'"><i class="fa fa-ambulance fa-3x" aria-hidden="true"></i> </span>
+                    <span class="check .span"*ngSwitchCase="'confirmado'"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></span>
+                    <span class="DontCheck .span" *ngSwitchCase="'falta'"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i> </span>
+                </div>
+                <br>
+            </div> 
             <i *ngIf="perteceJogador" class="fa fa-pencil"></i>      
-               
-    </div>		
+        </div>		
+    </div>
 </div>
   

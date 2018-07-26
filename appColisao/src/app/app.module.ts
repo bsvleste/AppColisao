@@ -20,6 +20,7 @@ import { AngularFireModule } from 'angularfire2/index';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FirebaseConfig } from '../environments/firebase.config';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { FirebaseConfig } from '../environments/firebase.config';
     HomeComponent,
     ComponentErrorComponent,
     JogadoresComponent
+   
   ],
   imports: [
     BrowserModule,

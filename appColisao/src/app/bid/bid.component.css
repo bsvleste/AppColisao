@@ -4,17 +4,12 @@ body
   background: #434a54;
   height: 100%;
 }
-/*conometro do bid*/
-.conometro{
-  color:red;
-  font:15px bold;
 
-}
 /*div onde fica o botao para iniciar o cadastro da bid*/
 .cadastroBid{
   margin-top: 50px;
   height: 30px;
-  background: white;
+  background: whitesmoke;
   z-index: 1;
 }
 .closeMenu{
@@ -30,16 +25,15 @@ body
 /*alinha REsposta*/
 .alinhaResposta
 {
-  height: 90%;
-  width: 90%;
-  margin: 5%;
+  padding: 0.6em;/*15/90*/
 }
 .central
 {
   float: right;
-  margin-right: 20%;
-  margin-top: 5%;
+  margin-right: .2222em;/*20/90*/
+  margin-top: 0.8em ;/*5/90*/
 }
+
 /*check*/
 .check
 {
@@ -48,6 +42,7 @@ body
 .DontCheck
 {
   color: red;
+
 }
 .dm
 {
@@ -57,12 +52,25 @@ body
 
 /*margem da div de dentro da div.bid*/
 .bid{
-  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+.cadastroUsuario
+{
+  position: fixed;
+  margin-top:-2.9em;
+  height: auto;
+  width: 90%;
+  z-index: 10;
+  background-color: #ecf0f1;
+}
+.cadastroUsuario > span
+{
+  cursor: pointer;
 }
 .scroll
 {
     margin-bottom:80px;
-    background: white;
     overflow-y: scroll; 
     touch-action:pan-y;
     z-index: 1;
@@ -109,26 +117,14 @@ body
 }
 /*cadastro do usuario*/
 
-.cadastroUsuario
-{
-  position: fixed;
-  margin-top:-60px;
-  height: 70%;
-  width: 85%;
-  z-index: 5;
-  background-color: #ecf0f1;
-}
-.cadastroUsuario > span
-{
-  cursor: pointer;
-}
 /*resultado do bid*/
 .resultado
 {
   margin-top:80px;
   height: 40px;
-  background: red;
+  background:whitesmoke;
   z-index: 1;
+  padding: 6px;
 }
 /* fundo do slider */
 .switch {
@@ -234,6 +230,28 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.chip{
+  display:block;
+  padding:  0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+}
+.chip span{
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;  
+  border-radius: 50%;
+}
+.cont
+{
+  position: relative;
+  height: 50px;
+  box-shadow: 5px 10px 8px #0025;
+  color:whitesmoke; 
+}
+
 /*
 @media (max-height: 515px)
 {
@@ -260,12 +278,21 @@ input:checked + .slider:before {
      bottom: 12%;
  }
   
-}
-*/
-@media (min-width: 731px)
+}*/
+
+@media (min-width: 800px)
 {
-  .cadastroUsuario{
-    width: 80%;
- }
-  
+  .cadastroUsuario
+  {
+    width: 70%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-right: -50%; 
+    transform: translate(-50%, -50%);
+    
+  }
+  .alinhaResposta{
+    padding: 10px 200px 10px 200px;
+  }  
 }

@@ -5,8 +5,8 @@ import { MensalidadeComponent } from './mensalidade.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { MesesComponent } from './meses/meses.component';
 import { MensalidadeResolver } from './guard/mensalidade.resolve';
-import { MensalidadeFormComponent } from './mensalidade-form/mensalidade-form.component';
 import { MensalidadeDiactivatedGuard } from './mensalidade.diactivated.guard';
+import { MensalidadeFormComponent } from './mensalidade-form/mensalidade-form.component';
 
 const mensalidadeRounting:Routes=[
     //adicionando rotas filhas

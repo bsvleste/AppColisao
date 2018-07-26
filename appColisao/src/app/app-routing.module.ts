@@ -12,18 +12,26 @@ import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade
 usar essa rota quando tiver senha
 */
 const routes: Routes = [
-  {path:'mensalidade',
-    canLoad:[AuthGuardMensalidade],
-    loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
-    canActivate:[AuthGuard,AuthGuardMensalidade],
-    canActivateChild:[MensalidadeGuard],
+  {
+      path:'mensalidade',
+      canLoad:[AuthGuardMensalidade],
+      loadChildren:'app/mensalidade/mensalidade.module#MensalidadeModule',
+      canActivate:[AuthGuard,AuthGuardMensalidade],
+      canActivateChild:[MensalidadeGuard],
   },
-  {path:'bid',
-    loadChildren:'app/bid/bid.module#BidModule',
-    canActivate:[AuthGuard]},
-  {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
-  {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
-  {path:'login',component:LoginComponent},
+  { 
+      path:'bid',
+      loadChildren:'app/bid/bid.module#BidModule',
+      canActivate:[AuthGuard]
+    },
+    {
+      path:'cadastro',
+      loadChildren:'app/cadastro/cadastro.module#CadastroModule',
+      canActivate:[AuthGuard],
+    },
+    {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
+    {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
+    {path:'login',component:LoginComponent},
 ];
 
 /*
