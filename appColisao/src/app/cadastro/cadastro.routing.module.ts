@@ -8,10 +8,10 @@ const cadastroRounting:Routes = [
         path:'', component:CadastroComponent,        
         children:[
             {path:'cadastrar', component:FormCadComponent},
-            {path:'edit:id',component:FormCadComponent,
-                //resolve:{mensalidade:MensalidadeResolver}
-            }           
-        ]
+            {path:'edit',component:FormCadComponent},
+            {path:'edit/:id',component:FormCadComponent,
+            //resolve:{mensalidade:MensalidadeResolver}
+            }]
     }
 ];
 @NgModule({

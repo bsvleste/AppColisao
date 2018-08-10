@@ -1,7 +1,6 @@
 import { AuthService } from './login/auth-service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +13,7 @@ export class AppComponent {
   title = 'app';
   mostraMenu:boolean = false;
   admPermissao:boolean = false;
-  constructor(private authService:AuthService, private router:Router, public authFirebase:AngularFireAuth){}
+  constructor(private authService:AuthService, private router:Router,){}
   ngOnInit()
   {
     //mantem o usuario logado no locastorage

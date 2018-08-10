@@ -16,12 +16,6 @@ export class AuthService {
   permissaoMenu = new EventEmitter<boolean>();
   emailEsenha = new EventEmitter<boolean>();
 
-  private user:any = [
-    {email:'bvaleiro@gmail.com',senha:'m4r1n4',permissao:'adm'},
-    {email:'mvaleiro@gmail.com',senha:'laralara',permissao:'jogador'}
-  
-  ];
-  
   private adm:any;
   private flag:boolean = false;
   constructor(private router:Router, private http:HttpClient) { }
@@ -29,12 +23,12 @@ export class AuthService {
   getUsuario(usuario:Usuario):Observable<Usuario>  
   { 
     let json = JSON.stringify(usuario);
-    return this.http.post<Usuario>('http://192.168.0.125/portifoliogithub/registro/app/php/login.php',usuario);
-  }
-  getUser()
-  {
-    return this.user;
-  }
+    //return this.http.post<Usuario>('http://192.168.0.125/portifolioGitHub/registro/app/php/login.php',usuario);
+    //pc no ccsp  
+    //return this.http.post<Usuario>('http://192.168.0.158/arquivosGit/registro/app/php/login.php',usuario);
+    //pc em casa
+    return this.http.post<Usuario>('http://192.168.1.32/arquivosGit/registro/app/php/login.php',usuario);
+  } 
   fazerLogin(usuario)
   {
     this.flag = true;

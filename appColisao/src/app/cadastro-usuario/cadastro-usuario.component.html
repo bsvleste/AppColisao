@@ -1,0 +1,21 @@
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="setCadastro(f)">
+    <app-error [mostraError]="verificaCampoInvalido(email)" msgError="Digite um email valido"></app-error>
+    <app-error [mostraError]="verificaCampoInvalido(nome)" msgError="Digite seu nome"></app-error>  
+    <app-error [mostraError]="verificaCampoInvalido(senha)" msgError="A senha tem que ter mais que 5 digitos"></app-error>
+    <app-error [mostraError]="!dados" msgError="Email ja cadastrado"></app-error>
+      <div class="form-group " [class.has-error]="!nome.touched">
+      <input #nome="ngModel" type="text" class="form-control input-lg" id="nome" aria-describedby="nomeHelp" placeholder="nome" name="nome" ngModel required nome>
+    </div>
+    <div class="form-group " [class.has-error]="!email.valid && email.touched">
+      <input #email="ngModel" type="email" class="form-control input-lg" id="login" aria-describedby="emailHelp" placeholder="Email" name="email" ngModel required email>
+    </div>
+    <div class="form-group" [class.has-error]="!senha.valid">
+      <input #senha="ngModel" ngModel type="password" class="form-control input-lg" id="senha" placeholder=Senha name="senha" minlength="5" required senha>
+      <small id="senha" class="form-text text-muted" style="color:#f0c330;">Nunca forneça sua senha para estranhos.</small>
+    </div>
+    <button type="submit" class="btn btn-lg btn-block" [disabled]="!f.valid " style="background-color:#f0c330;">Submit</button>
+  </form>
+  <h1>CAdastrar o novo jogador no php cadsatroUsuario </h1>
+</div>
+

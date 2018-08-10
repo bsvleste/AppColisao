@@ -1,3 +1,5 @@
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { JogadoresComponent } from './jogadores/jogadores.component';
 import { NgModule } from '@angular/core';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -32,6 +34,7 @@ const routes: Routes = [
     {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
     {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
     {path:'login',component:LoginComponent},
+    {path:'novo',component:CadastroUsuarioComponent}
 ];
 
 /*

@@ -5,7 +5,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule, Http } from '@angular/http';
 import { BidComponent } from './bid.component';
 import { BidRoutingModule } from './bid.routing.module';
-import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @NgModule({
 
@@ -18,9 +17,6 @@ import { AngularFireDatabase } from 'angularfire2/database-deprecated';
     ],
     exports:[],
     declarations:[BidComponent],
-    providers:[
-        AngularFireDatabase,
-        {provide: LocationStrategy, useClass:HashLocationStrategy}
-    ]
+    providers:[{provide: LocationStrategy, useClass:HashLocationStrategy}]
 })
 export class BidModule{}

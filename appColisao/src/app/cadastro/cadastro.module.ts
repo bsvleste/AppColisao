@@ -6,6 +6,7 @@ import { HttpModule, Http } from '@angular/http';
 import { CadastroRoutingModule } from './cadastro.routing.module';
 import { CadastroComponent } from './cadastro.component';
 import { FormCadComponent } from './form-cad/form-cad.component';
+import { CadastroService } from './service/cadastro.service';
 
 @NgModule({
 
@@ -18,7 +19,7 @@ import { FormCadComponent } from './form-cad/form-cad.component';
     ],
     exports:[],
     declarations:[FormCadComponent,CadastroComponent],
-    providers:[
+    providers:[CadastroService,
         {provide:LocationStrategy, useClass:HashLocationStrategy}
     ]
 })
