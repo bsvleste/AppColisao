@@ -73,9 +73,9 @@ export class MesesServices
         //pc do ccsp
         //return this.httpClient.get('http://192.168.0.125/portifoliogithub/registro/app/php/mensalidadeJaneiro.php'+'?id='+id);        
         //pc no ccsp
-        //return this.httpClient.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
+        return this.httpClient.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
         //pc em casa
-        return this.httpClient.get<any>('http://192.168.1.32/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
+        //return this.httpClient.get<any>('http://192.168.1.32/arquivosGit/registro/app/php/mensalidadeJaneiro.php?id='+ id);        
     }    
     updateMensalidade(jogador:Jogadores):Observable<Jogadores>{
         let json = JSON.stringify(jogador);
@@ -90,16 +90,16 @@ export class MesesServices
         //pc do ccsp
         //return this.httpClient.post<Jogadores>('http://192.168.0.125/portifoliogithub/registro/app/php/mensalidade.php',json);
         //noteBook
-        //return this.httpClient.post<Jogadores>('http://192.168.0.158/arquivosGit/registro/app/php/mensalidade.php',json);
+        return this.httpClient.post<Jogadores>('http://192.168.0.158/arquivosGit/registro/app/php/mensalidade.php',json);
         //pc em casa
-        return this.httpClient.post<Jogadores>('http://192.168.1.32/arquivosGit/registro/app/php/mensalidade.php',json);
+        //return this.httpClient.post<Jogadores>('http://192.168.1.32/arquivosGit/registro/app/php/mensalidade.php',json);
     }
     getBidCad()
     {
         //return this.httpClient.get('http://192.168.0.125/portifoliogithub/registro/app/php/bidCadastrado.php');
         //pc no ccsp
-        //return this.httpClient.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php');  
+        return this.httpClient.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php');  
         //pc em casa
-        return this.httpClient.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php');  
+        //return this.httpClient.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php');  
     }      
 }

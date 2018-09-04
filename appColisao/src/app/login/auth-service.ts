@@ -23,11 +23,8 @@ export class AuthService {
   getUsuario(usuario:Usuario):Observable<Usuario>  
   { 
     let json = JSON.stringify(usuario);
-    //return this.http.post<Usuario>('http://192.168.0.125/portifolioGitHub/registro/app/php/login.php',usuario);
-    //pc no ccsp  
-    //return this.http.post<Usuario>('http://192.168.0.158/arquivosGit/registro/app/php/login.php',usuario);
-    //pc em casa
-    return this.http.post<Usuario>('http://192.168.1.32/arquivosGit/registro/app/php/login.php',usuario);
+    return this.http.post<Usuario>('http://192.168.0.158/arquivosGit/registro/app/php/login.php',usuario);
+    
   } 
   fazerLogin(usuario)
   {

@@ -34,7 +34,7 @@ export class CadastroUsuarioComponent implements OnInit {
     {
       this.usuario = f.value
       
-      this.http.post('http://192.168.1.32/arquivosGit/registro/app/php/cadastroUsuario.php',this.usuario)
+      this.http.post('http://192.168.0.158/arquivosGit/registro/app/php/cadastroUsuario.php',this.usuario)
       .subscribe((data)=>{
         this.resultado = data;
         console.log(this.resultado);

@@ -39,7 +39,7 @@ export class FormCadComponent implements OnInit {
     let permissao = this.form.nativeElement.select.value;
     let alterarJogador = {'id':id,
                           'permissao':permissao};
-    this.http.post('http://192.168.1.32/arquivosGit/registro/app/php/alteraPermissao.php',alterarJogador).subscribe((data)=>{
+    this.http.post('http://192.168.0.158/arquivosGit/registro/app/php/alteraPermissao.php',alterarJogador).subscribe((data)=>{
       console.log(data);
     })
     //console.log(alterarJogador);

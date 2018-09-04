@@ -17,7 +17,7 @@ export class CadastroService
         //pc no ccsp
         //return this.http.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/chamaJogadorId.php');       
         //pc em casa
-        return this.http.get<any>('http://192.168.1.32/arquivosGit/registro/app/php/chamaJogadorId.php');       
+        return this.http.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/chamaJogadorId.php');       
     }
     getJogador(idJogador)
     {
@@ -25,17 +25,17 @@ export class CadastroService
         //pc no ccsp
         //return this.http.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/chamaJogadorId.php?id='+id);       
         //pc em casa
-        return this.http.get<any>('http://192.168.1.32/arquivosGit/registro/app/php/chamaJogadorId.php?id='+id);       
+        return this.http.get<any>('http://192.168.0.158/arquivosGit/registro/app/php/chamaJogadorId.php?id='+id);       
     }
     //deleta um jogador
     deletaJogador(idJogador)
     {
         let id = {'id':parseInt(idJogador)}
-        return this.http.post<any>('http://192.168.1.32/arquivosGit/registro/app/php/deletaJogador.php',id);       
+        return this.http.post<any>('http://192.168.0.158/arquivosGit/registro/app/php/deletaJogador.php',id);       
     }
     alterarPermissao(permissao)
     {
         let per = permissao;
-        return this.http.post<any>('http://192.168.1.32/arquivosGit/registro/app/php/alteraPermissao.php',per);       
+        return this.http.post<any>('http://192.168.0.158/arquivosGit/registro/app/php/alteraPermissao.php',per);       
     }
 }
