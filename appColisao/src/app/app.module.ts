@@ -17,6 +17,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     ComponentErrorComponent,
     JogadoresComponent,
     CadastroUsuarioComponent,
+    RegistroComponent,
    
   ],
   imports: [
