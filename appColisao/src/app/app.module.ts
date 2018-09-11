@@ -17,7 +17,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardMensalidade } from './mensalidade/guard/auth-guard-mensalidade';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
-import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -28,15 +27,12 @@ import { RegistroComponent } from './registro/registro.component';
     ComponentErrorComponent,
     JogadoresComponent,
     CadastroUsuarioComponent,
-    RegistroComponent,
-   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
-    
+    HttpClientModule    
   ],
   providers: [AuthGuard,AuthService,MesesServices,MensalidadeGuard,AuthGuardMensalidade, {provide:LocationStrategy, useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]

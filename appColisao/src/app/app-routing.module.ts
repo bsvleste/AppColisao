@@ -31,6 +31,11 @@ const routes: Routes = [
       loadChildren:'app/cadastro/cadastro.module#CadastroModule',
       canActivate:[AuthGuard],
     },
+    {
+      path:'registro',
+      loadChildren:'app/registro/registro.module#RegistroModule',
+      canActivate:[AuthGuard],
+    },
     {path:"", pathMatch:"full",component:HomeComponent,canActivate:[AuthGuard]},
     {path:"home",component:HomeComponent,canActivate:[AuthGuard]},
     {path:'login',component:LoginComponent},
