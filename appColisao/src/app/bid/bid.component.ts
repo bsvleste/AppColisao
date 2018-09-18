@@ -24,8 +24,8 @@ export class BidComponent implements OnInit {
     //this.exibeDados  = bd.list('bid');
     
       //this.httpPots.get('http://192.168.1.155/portifoliogithub/registro/app/php/bidCadastrado.php')
-      //this.httpPots.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php')
-      this.httpPots.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php')
+      this.httpPots.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php')
+      //this.httpPots.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php')
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)
@@ -42,8 +42,8 @@ export class BidComponent implements OnInit {
    this.mostraCadastro();
     this.intervalSet = setInterval(()=>{
       //this.httpPots.get('http://192.168.0.155/portifoliogithub/registro/app/php/bidCadastrado.php')
-      //this.httpPots.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php')
-      this.httpPots.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php')
+      this.httpPots.get('http://192.168.0.158/arquivosGit/registro/app/php/bidCadastrado.php')
+      //this.httpPots.get('http://192.168.1.32/arquivosGit/registro/app/php/bidCadastrado.php')
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)
@@ -84,8 +84,8 @@ export class BidComponent implements OnInit {
       let teste = JSON.parse(localStorage.getItem('currentuser'));
       let jogador = {"id_user":teste[0].id,"bid":this.respostaBid};
       //this.httpPots.post('http://192.168.0.155/portifoliogithub/registro/app/php/somaMensalidade.php',jogador)
-      //this.httpPots.post('http://192.168.0.158/arquivosGit/registro/app/php/somaMensalidade.php',jogador)
-      this.httpPots.post('http://192.168.1.32/arquivosGit/registro/app/php/somaMensalidade.php',jogador)
+      this.httpPots.post('http://192.168.0.158/arquivosGit/registro/app/php/somaMensalidade.php',jogador)
+      //this.httpPots.post('http://192.168.1.32/arquivosGit/registro/app/php/somaMensalidade.php',jogador)
       .subscribe((data)=>{
         this.guarda = data;
         console.log(this.guarda)

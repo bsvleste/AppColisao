@@ -80,6 +80,5 @@ export class MesesComponent implements OnInit {
     //this.http.post('http://192.168.137.1/portifoliogithub/registro/app/php/mensalidade.php',jogador).subscribe((data)=>{console.log(jogador)},(error)=>{console.log('Error'+error)});
     this.somaMensalidade(); 
   }
-  
-  
+ 
 }

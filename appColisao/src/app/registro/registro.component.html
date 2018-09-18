@@ -1,3 +1,25 @@
-<p>
-  registro works!
-</p>
+<div class="container-principal">
+  <div class="container">
+    <form #f="ngForm">
+      <div class="container-radio">
+        <div class="radio-select">
+          <input type="radio" name= "radio" id="radio1" value="2" #quadro2="ngModel" ngModel>
+          <label for="radio1" class="label">2 Quadro</label>
+        </div>
+        <div class="radio-select">
+          <input type="radio" name="radio" id="radio2" value="1" #quadro1="ngModel" ngModel>
+          <label for="radio2" class="label">1 Quadro</label>          
+        </div>
+
+        <div  class="central" *ngFor="let jo of jogadores">
+          <label for="">{{jo.nome}}</label>
+          <label class="switch">
+            <input type="checkbox" value="{{jo}}" (change)="passaValor(jo,$event)"> 
+            <span class="slider round"></span>
+          </label>          
+      </div>
+      </div>      
+      <button (click)="teste(f)">Valor</button>
+    </form>      
+    </div>
+  </div>

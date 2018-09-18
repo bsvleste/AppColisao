@@ -185,13 +185,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /* On mouse-over, add a grey background color */
-.switch:hover input ~ .slider {
+/*.switch:hover input ~ .slider {
     background-color: #ccc;
 }
 /* When the radio button is checked, add a blue background */
-.switch input:checked ~ .slider {
+/*.switch input:checked ~ .slider {
     background-color: #2196F3;
-}
+}*/
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .slider:after {
