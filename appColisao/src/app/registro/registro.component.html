@@ -1,25 +1,64 @@
 <div class="container-principal">
-  <div class="container">
-    <form #f="ngForm">
-      <div class="container-radio">
-        <div class="radio-select">
-          <input type="radio" name= "radio" id="radio1" value="2" #quadro2="ngModel" ngModel>
-          <label for="radio1" class="label">2 Quadro</label>
+  <div class="bid">      
+      
+      <form #f="ngForm" >
+        <div class="cadastroUsuario" #cadastroQuadro >
+          <div class="list-group list-group-flush">
+            <div class="closeMenu"></div>
+            <div class="list-group-item">              
+              <div class="alinhaResposta">
+                <div class="form-group">
+                  <span class="quadro">2 Quadro</span>
+                  <div class="central">
+                    <label class="switch">
+                      <input type="radio" checked="checked" name="radio" #quadro2="ngModel" ngModel value="2" >
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <span  class="quadro">1 Quadro</span>
+                  <div class="central">
+                    <label class="switch">
+                      <input type="radio" checked="checked" name="radio" #quadro1="ngModel" ngModel value="1"> 
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            <div class="list-group-item">
+              <div class="alinhaResposta">
+                <div class="form-group" *ngFor="let jo of jogadores" >
+                  <span class="quadro">{{jo.nome}}</span>
+                  <div class="central-jogador">
+                    <label class="switch">
+                        <input type="checkbox" value="{{jo}}" (change)="passaValor(jo,$event)"> 
+                        <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn btn-warning btn-lg" type="submit" (click)="cadastraJogadores(f)">Enviar</button>
+          </div>
         </div>
-        <div class="radio-select">
-          <input type="radio" name="radio" id="radio2" value="1" #quadro1="ngModel" ngModel>
-          <label for="radio2" class="label">1 Quadro</label>          
-        </div>
-
-        <div  class="central" *ngFor="let jo of jogadores">
-          <label for="">{{jo.nome}}</label>
-          <label class="switch">
-            <input type="checkbox" value="{{jo}}" (change)="passaValor(jo,$event)"> 
-            <span class="slider round"></span>
-          </label>          
-      </div>
-      </div>      
-      <button (click)="teste(f)">Valor</button>
-    </form>      
+        
+      </form>
+    
     </div>
+  </div>
+  
+  <div *ngIf="quadro" >
+    <div class="central" *ngFor="let jo of jogadores">
+      <label for="">{{jo.nome}}</label>
+      <label class="switch">
+        <input type="checkbox" value="{{jo}}" (change)="passaValor(jo,$event)"> 
+        <span class="slider round"></span>
+      </label>          
+    </div>
+    
   </div>

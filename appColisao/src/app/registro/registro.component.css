@@ -19,66 +19,200 @@
     background-color: aquamarine;
     cursor: pointer;
 }
+.quadro{
+  font: 50px bold;
+}
 
-
+.closeMenu{
+  background-color: #ffce54;
+  height: 45px;
+}
+/*span de dentro do menu*/
+.closeMenu>span
+{
+  float: right;
+  cursor: pointer;
+}
+/*alinha REsposta*/
+.alinhaResposta
+{
+  padding: 0.6em;/*15/90*/
+}
 .central
 {
   float: right;
   margin-right: .2222em;/*20/90*/
   margin-top: 0.8em ;/*5/90*/
 }
+.central-jogador
+{
+  float: right;
+  margin-right: .2222em;/*20/90*/
+  margin-top: 0.9em ;/*5/90*/
+}
+
+
+/*margem da div de dentro da div.bid*/
+.bid{
+  width: 90%;
+  margin: 0 auto;
+ 
+}
+.cadastroUsuario
+{
+  margin-top:-2.9em;
+  height: auto;
+  width: 100%;
+  background-color: #ecf0f1;
+  height: auto;
+  overflow: scroll;
+  touch-action:pan-y;
+  margin-bottom: 80px;
+}
+.cadastroUsuario > span
+{
+  cursor: pointer;
+}
+/*botao para registrar o usuario no bid*/
+.btn-registro
+{
+  z-index: 10;
+  position: fixed;
+  left: 80%;
+  bottom: 15%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: green;
+  border: 1px solid green;
+}
+/*muda a cor do btn-primary*/
+.btn-warning
+{
+  background-color: #ffce54;
+  border-color: #ffce54;
+}
+
+/*deixa o botao do bootstrap 100%*/
+.btn-lg
+{
+  width: 100%;
+}
+/*fundo do form*/
+.formulario
+{
+  background-color: white;
+  width: 80%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top:200px;
+}
+/*span dentro do form*/
+.formulario > span
+{
+  cursor: pointer;
+}/* fundo do slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input {display:none;}
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+      
+}
+/*esconde o chekbox*/
+.switch input {display:none;}
+
+/* O slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* On mouse-over, add a grey background color */
+/*.switch:hover input ~ .slider {
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+/* When the radio button is checked, add a blue background */
+/*.switch input:checked ~ .slider {
     background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
+}*/
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.slider:after {
+  position: absolute;
+  content: "";
+  height: 206px;
+  width: 206px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.switch input:checked ~ .slider:after {
     transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+}
+
+/* Style the indicator (dot/circle) */
+.switch .slider:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/*esconde o chekbox*/
+.switch input {display:none;}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 180px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-registro',
@@ -7,24 +7,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('cadastroQuadro') myDiv:ElementRef;  
+  @ViewChild('btnEnviar') enviarBtn:ElementRef;
+  
+  public quadro:boolean = false;
+  private flag:boolean = true;
   public checkList=[];
   public jogadores=[
     {id:1,nome:'Bruno'},
     {id:2,nome:'lennon'},
-    {id:3,nome:'Rafael'}];
+    {id:3,nome:'edvan'},
+    {id:4,nome:'marcio'},
+    {id:5,nome:'thiago'},
+    {id:6,nome:'nicola'},
+    {id:7,nome:'daniel'},
+    {id:8,nome:'marcos'},
+    {id:9,nome:'Rafael'}];
+  constructor() { }
     
-  ngOnInit() {
-  }
-  teste(f)
+  ngOnInit()
   {
-    console.log(f.value);
+    this.mostraCadastro();
   }
-  passaValor(option,event)
+  
+  closeCad()
+  {
+    this.myDiv.nativeElement.style.display = "none";
+  }
+  openCad()
+  { 
+  
+    this.myDiv.nativeElement.style.display = "block";
+  }
+  mostraCadastro()
+  { 
+    if(!this.flag)
+    {
+      this.closeCad();
+      this.flag = true;
+    }else
+    {
+      this.openCad();
+      this.flag = false;
+    }
+  }
+  passaValor(option,event,f)
   {
     if(event.target.checked)
     {
-      this.checkList.push(option);
+      this.checkList.push({jogadores:{option}});
     }else{
       let i = this.checkList.findIndex(obj =>obj == option);
       this.checkList.splice(i,1);
@@ -35,6 +66,12 @@ export class RegistroComponent implements OnInit {
         }
       }*/
     }
+    console.log(this.checkList);
+  }
+  cadastraJogadores(f)
+  {
+    let teste = f.value;
+    this.checkList.push({quadro:teste});
     console.log(this.checkList);
   }
 }
