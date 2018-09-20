@@ -1,3 +1,5 @@
+import { log } from 'util';
+import { Jogadores } from './../mensalidade/jogadores';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
@@ -7,12 +9,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  @ViewChild('cadastroQuadro') myDiv:ElementRef;  
   @ViewChild('btnEnviar') enviarBtn:ElementRef;
   
   public quadro:boolean = false;
   private flag:boolean = true;
-  public checkList=[];
+  public checkList = [{quadro:0,jogadores:[ ]}];
+  public perfil =[];
   public jogadores=[
     {id:1,nome:'Bruno'},
     {id:2,nome:'lennon'},
@@ -27,38 +29,18 @@ export class RegistroComponent implements OnInit {
     
   ngOnInit()
   {
-    this.mostraCadastro();
+    //console.log(this.checkList);
   }
   
-  closeCad()
-  {
-    this.myDiv.nativeElement.style.display = "none";
-  }
-  openCad()
-  { 
-  
-    this.myDiv.nativeElement.style.display = "block";
-  }
-  mostraCadastro()
-  { 
-    if(!this.flag)
-    {
-      this.closeCad();
-      this.flag = true;
-    }else
-    {
-      this.openCad();
-      this.flag = false;
-    }
-  }
   passaValor(option,event,f)
   {
     if(event.target.checked)
     {
-      this.checkList.push({jogadores:{option}});
+      let teste = {id:option.id,nome:option.nome,perfil:[]}
+      this.checkList[0].jogadores.push(teste);
     }else{
       let i = this.checkList.findIndex(obj =>obj == option);
-      this.checkList.splice(i,1);
+      this.checkList[0].jogadores.splice(i,1);
       /*for(let i=0;i< this.checkList.length;i++)
       {
         if(this.checkList[i] == option.id){
@@ -71,7 +53,12 @@ export class RegistroComponent implements OnInit {
   cadastraJogadores(f)
   {
     let teste = f.value;
-    this.checkList.push({quadro:teste});
-    console.log(this.checkList);
+    this.checkList[0].quadro = teste;
+    this.checkList[0].jogadores[0].perfil.push({gol:2,falta:3});
+    for (const i in this.checkList[0].jogadores) {
+      this.perfil.push(this.checkList[0].jogadores[i]);
+    }
+    console.log(this.perfil);
+    this.flag = false;
   }
 }

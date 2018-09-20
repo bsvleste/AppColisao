@@ -1,7 +1,7 @@
 <div class="container-principal">
-  <div class="bid">      
+  <div class="bid" >      
       
-      <form #f="ngForm" >
+      <form #f="ngForm" *ngIf="flag" >
         <div class="cadastroUsuario" #cadastroQuadro >
           <div class="list-group list-group-flush">
             <div class="closeMenu"></div>
@@ -52,13 +52,9 @@
     </div>
   </div>
   
-  <div *ngIf="quadro" >
-    <div class="central" *ngFor="let jo of jogadores">
-      <label for="">{{jo.nome}}</label>
-      <label class="switch">
-        <input type="checkbox" value="{{jo}}" (change)="passaValor(jo,$event)"> 
-        <span class="slider round"></span>
-      </label>          
+  <div>
+    <div class="central" *ngFor="let jo of perfil">
+      <label for="">{{jo.nome}}</label>                
     </div>
     
   </div>
