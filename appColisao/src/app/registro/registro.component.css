@@ -1,5 +1,11 @@
+
 .container-principal{
     margin-top: -10px;
+}
+#fundo{
+	width: 80%;
+	left:18%;
+	position: relative;
 }
 .radio-select{
     float: left;
@@ -74,18 +80,6 @@
   cursor: pointer;
 }
 /*botao para registrar o usuario no bid*/
-.btn-registro
-{
-  z-index: 10;
-  position: fixed;
-  left: 80%;
-  bottom: 15%;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: green;
-  border: 1px solid green;
-}
 /*muda a cor do btn-primary*/
 .btn-warning
 {
@@ -216,3 +210,233 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/*registro dos jogadores*/
+.chuteagol{
+	background-color: #4ec8af;	
+}
+.gol{
+	background-color: #60ade0;	
+}
+.assistencia{
+	background-color: #ae7cc2;
+}
+.faltascometidas{
+	background-color: #39ca74;
+}
+.faltassofridas{
+	background-color:#e54d42;
+}
+.desarmes{
+	background-color: #f0c330;
+}
+ul li{
+	list-style: none;
+	position: relative;
+	left:-30px;
+	display: inline;
+}
+.btn-registro{
+	position: relative;
+	width: 12%;
+	height: 120px;
+	cursor: pointer;
+	margin: 0 0 0 4px;
+	border: none;
+	left: 7%;
+	top: -60px;
+	-webkit-box-shadow: 0px 10px 12px -2px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    0px 10px 12px -2px rgba(50, 50, 50, 1);
+	box-shadow:         0px 10px 12px -2px rgba(50, 50, 50, 1);
+
+}
+.btnenviar{
+	position: relative;
+	width: 90%;
+	height: 50px;
+top:5px;
+	cursor: pointer;
+	margin: 0 0 0 4px;
+	border: none;
+	-webkit-box-shadow: 0px 10px 12px -2px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    0px 10px 12px -2px rgba(50, 50, 50, 1);
+	box-shadow:         0px 10px 12px -2px rgba(50, 50, 50, 1);
+
+}
+.jogador{
+	width: 130px;
+}
+.circular {
+	position: relative;
+	width: 9%;
+	height: 120px;
+	
+/*
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+*/
+}
+p{
+	font-size: 15px;
+}
+@media screen and (max-width:480px) {
+	.status{
+-webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+   -moz-appearance: none; /* Remove estilo padrão do FireFox */
+   appearance: none; /* Remove estilo padrão do FireFox*/
+		width: 95%;
+		position: relative;
+		left: 10px;
+height:30px;
+
+	}
+	.btn-registro{
+		left:9%;
+		top: 10px;
+		height:80px;
+	}
+	.jogador{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	p{
+		font-size: 10px;
+	}
+	#fundo{
+		top: 10px;
+	}
+	.btnenviar{
+		width: 95%;
+		left: 6px;
+top:10px;
+	}
+	.btnenv{
+position:relative;
+
+		width: 95%;
+		left: 6px;
+height:50px;
+top:20px;
+	}
+
+	.circular{
+		top: 30px;
+		height: 50px;
+	}
+	.registro{
+ 	position: relative;
+ 	top: 20px;
+ 	}
+ }
+ 
+ @media screen and (max-width:600px) { 
+.status{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	.btn-registro{
+		left:6%;
+		top: 10px;
+		height:80px;
+	}
+	.jogador{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	p{
+		font-size: 10px;
+	}
+	#fundo{
+		top: 10px;
+		left: 17%;
+	}
+	.btnenviar{
+		width: 95%;
+		left: 6px;
+	}
+	.circular{
+		top: 30px;
+		height: 50px;
+	}
+	.registro{
+ 	position: relative;
+ 	top: 20px;
+ 	}
+ }
+ @media screen and (max-width:768px) { 
+ 	.status{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	.btn-registro{
+		left:6%;
+		top: 10px;
+		height:80px;
+	}
+	.jogador{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	p{
+		font-size: 10px;
+	}
+	#fundo{
+		top: 10px;
+		left: 17%;
+	}
+	.btnenviar{
+		width: 95%;
+		left: 6px;
+	}
+	.circular{
+		top: 30px;
+		height: 50px;
+	}
+	.registro{
+ 	position: relative;
+ 	top: 20px;
+ 	}
+ }
+@media screen and (max-width:992px) {
+	.status{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	.btn-registro{
+		left:17%;
+		top: 10px;
+		height:60px;
+		border-radius: 40%;
+	}
+	.jogador{
+		width: 95%;
+		position: relative;
+		left: 10px;
+	}
+	p{
+		font-size: 10px;
+	}
+	#fundo{
+		top: 10px;
+		left: 17%;
+	}
+	.btnenviar{
+		width: 95%;
+		left: 6px;
+	}
+	.circular{
+		top: 30px;
+		height: 10px;
+	}
+	.registro{
+ 	position: relative;
+ 	top: 20px;
+ 	}
+ }

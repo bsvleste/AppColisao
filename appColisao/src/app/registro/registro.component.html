@@ -53,8 +53,18 @@
   </div>
   
   <div>
-    <div class="central" *ngFor="let jo of perfil">
-      <label for="">{{jo.nome}}</label>                
-    </div>
-    
+    <img id="fundo" src="assets/img/icones-fundo.png">
+    <nav *ngFor="let jo of perfil">
+        <ul>
+          <li><div class="circular">{{ jo.nome }}</div></li>			
+          <li><input type="number" name="chuteagol[]" class="btn-registro chuteagol"  [(ngModel)]="teste"  (click)="soma();"></li>
+          <li><input type="number" name="gol[]" class="btn-registro gol" onclick="func(this)" value="0"></li>
+          <li><input type="number" name="assistencia[]" class="btn-registro assistencia" onclick="func(this)" value="0"></li>
+          <li><input type="number" name="faltascometidas[]" class="btn-registro faltascometidas" onclick="func(this)" value="0"></li>
+          <li><input type="number" name="faltassofridas[]" class="btn-registro faltassofridas" onclick="func(this)" value="0"></li>
+          <li><input type="number" name="desarmes[]" class="btn-registro desarmes" onclick="func(this)" value="0"></li>
+          <li><input type="hidden" name="id[]" value=""></li>
+          <li><input type="hidden" name="quadro" value=""> </li>
+        </ul>
+      </nav>		
   </div>

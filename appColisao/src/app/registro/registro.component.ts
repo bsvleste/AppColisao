@@ -11,6 +11,7 @@ export class RegistroComponent implements OnInit {
 
   @ViewChild('btnEnviar') enviarBtn:ElementRef;
   
+  public teste = 0;
   public quadro:boolean = false;
   private flag:boolean = true;
   public checkList = [{quadro:0,jogadores:[ ]}];
@@ -39,17 +40,20 @@ export class RegistroComponent implements OnInit {
       let teste = {id:option.id,nome:option.nome,perfil:[]}
       this.checkList[0].jogadores.push(teste);
     }else{
-      let i = this.checkList.findIndex(obj =>obj == option);
-      this.checkList[0].jogadores.splice(i,1);
-      /*for(let i=0;i< this.checkList.length;i++)
+      //let i = this.checkList.findIndex(obj =>obj == option);
+      //this.checkList[0].jogadores.splice(i,1);
+      //console.log(option.id);
+      for(let i=0;i< this.checkList[0].jogadores.length;i++)
       {
-        if(this.checkList[i] == option.id){
-          this.checkList.splice(i,1);   
+        //console.log(this.checkList[0].jogadores[i].id == option.id);
+        if(this.checkList[0].jogadores[i].id == option.id){
+          this.checkList[0].jogadores.splice(i,1);   
         }
-      }*/
+      }
+     
     }
     console.log(this.checkList);
-  }
+  }  
   cadastraJogadores(f)
   {
     let teste = f.value;
@@ -58,7 +62,12 @@ export class RegistroComponent implements OnInit {
     for (const i in this.checkList[0].jogadores) {
       this.perfil.push(this.checkList[0].jogadores[i]);
     }
-    console.log(this.perfil);
+    //console.log(this.perfil);
     this.flag = false;
+  }
+  soma()
+  {
+    this.teste++;
+    console.log(this.teste);
   }
 }
